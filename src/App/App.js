@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import './App.css';
 import helper from '../API/helper.js';
-// import CardList from 'CardList';
+import CardList from 'CardList';
 
 const { fetchMovies } = helper;
 
@@ -15,10 +15,6 @@ class App extends Component {
     }
   }
 
-  async componentDidMount(){
-    const movies = await fetchMovies();
-    this.setState({ movies })
-  }
 
   render() {
     console.log(this.state);
@@ -27,7 +23,7 @@ class App extends Component {
         <header className="App-header">
           <h1 className="App-title">Movie Tracker</h1>
         </header>
-        {/* <CardList movies = {this.state.movies}/> */}
+        <CardList />
       </div>
     );
   }
