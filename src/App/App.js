@@ -2,24 +2,18 @@ import React, { Component } from 'react';
 import './App.css';
 import CardList from '../CardList/CardList';
 import NavBar from '../NavBar/NavBar';
-
+import { Route } from 'react-router-dom';
 
 class App extends Component {
-  constructor(){
-    super();
-    this.state = {
-      movies: []
-    }
-  }
+
 
 
   render() {
     return (
       <div className="App">
-        <NavBar />
-
-          <h1 className="App-title">MovieTracker</h1>
-
+        <Route path='/' component={NavBar} key='NavBar'/>
+        <Route exact path='/cardlist' component={CardList} key='NavBar'/>
+        <h1 className="App-title">MovieTracker</h1>
       </div>
     );
   }
