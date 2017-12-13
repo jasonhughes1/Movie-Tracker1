@@ -5,12 +5,13 @@ import { addMovies } from './CardListActions.js';
 const { fetchMovies } = helper;
 
 class CardList extends Component {
-  
+
 
   async componentDidMount(){
     const getMovies = await fetchMovies();
+    // console.log(getMovies);
+    this.props.addMovieFunction(getMovies)
   }
-    addMovies(getMovies)
 
   render(){
     return(
@@ -28,7 +29,7 @@ const mapStateToProps = (store) => {
 
 const mapDispatchToProps = (dispatch) => {
  return {
-  addMovie: (getMovies) => {
+  addMovieFunction: (getMovies) => {
     dispatch(addMovies(getMovies));
   }
   }
