@@ -1,10 +1,6 @@
 import React, { Component } from 'react';
 import './App.css';
-import helper from '../API/helper.js';
-import CardList from 'CardList';
-
-const { fetchMovies } = helper;
-
+import CardList from '../CardList/CardList'
 
 
 class App extends Component {
