@@ -1,10 +1,7 @@
 import React, { Component } from 'react';
 import './App.css';
-import helper from '../API/helper.js';
-import CardList from 'CardList';
-
-const { fetchMovies } = helper;
-
+import CardList from '../CardList/CardList';
+import NavBar from '../NavBar/NavBar';
 
 
 class App extends Component {
@@ -17,13 +14,12 @@ class App extends Component {
 
 
   render() {
-    console.log(this.state);
     return (
       <div className="App">
-        <header className="App-header">
-          <h1 className="App-title">Movie Tracker</h1>
-        </header>
-        <CardList />
+        <NavBar />
+
+          <h1 className="App-title">MovieTracker</h1>
+
       </div>
     );
   }
