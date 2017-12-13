@@ -5,11 +5,12 @@ import { addMovies } from './CardListActions.js';
 const { fetchMovies } = helper;
 
 class CardList extends Component {
+  
+
   async componentDidMount(){
     const getMovies = await fetchMovies();
-    this.props.addMovies(addMovies)
-
   }
+    addMovies(getMovies)
 
   render(){
     return(
@@ -19,14 +20,18 @@ class CardList extends Component {
 }
 
 const mapStateToProps = (store) => {
-  addMovies: store.addMovies
+  return {
+    movies: store.movies
+  }
 }
 
 
 const mapDispatchToProps = (dispatch) => {
-  addMovies: (movies) => {
-    dispatch(addMovies(movies));
+ return {
+  addMovie: (getMovies) => {
+    dispatch(addMovies(getMovies));
+  }
   }
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(CardList)
+export default connect(mapStateToProps, mapDispatchToProps)(CardList);
