@@ -1,7 +1,7 @@
-export const addMovies = (store = [], action) => {
+export const addMoviesReducer = (store = [], action) => {
   switch(action.type){
     case 'ADD_MOVIES':
-    return [...action.addMovies]
+    return [...store, action.movie]
     default:
     return store;
   }
