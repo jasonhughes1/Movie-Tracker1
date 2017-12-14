@@ -16,6 +16,7 @@ class CardList extends Component {
 
   render(){
     const movieCards = this.props.movies.map((movie) => {
+      // console.log(movie);
      return <Card
      title = {movie.title}
      overview = {movie.overview}
