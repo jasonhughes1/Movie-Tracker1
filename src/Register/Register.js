@@ -9,7 +9,18 @@ export default class Register extends Component {
 
   render() {
     return(
-      <div>This is the Register page</div>
+      <div className = 'register'>
+        <h2>register</h2>
+        <input
+          placeholder = 'name'/>
+        <input
+          placeholder = 'email'/>
+        <input
+          placeholder = 'password'/>
+        <input
+          placeholder = 're-eneter password'/>
+        <button>submit</button>
+      </div>
     )
   }
 }

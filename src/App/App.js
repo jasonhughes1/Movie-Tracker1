@@ -13,11 +13,11 @@ class App extends Component {
   render() {
     return (
       <div className="App">
+        <h1 className="App-title">MovieTracker</h1>
         <Route path='/' component={NavBar} key='NavBar'/>
         <Route exact path='/' component={CardList} key='CardList'/>
         <Route exact path='/login' component={Login} key='login' />
-        <Route exact path='/register' component={Register} key='login' />
-        <h1 className="App-title">MovieTracker</h1>
+        <Route exact path='/register' component={Register} key='register' />
       </div>
     );
   }

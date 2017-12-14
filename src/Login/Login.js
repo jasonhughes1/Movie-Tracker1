@@ -9,7 +9,16 @@ export default class Login extends Component {
 
   render() {
     return(
-      <div>This is the login page</div>
+      <div className = 'login'>
+        <h2>register</h2>
+
+        <input
+          placeholder = 'email'/>
+        <input
+          placeholder = 'password'/>
+
+        <button>submit</button>
+      </div>
     )
   }
 }
