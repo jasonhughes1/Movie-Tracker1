@@ -8,27 +8,40 @@ const { fetchMovies } = helper;
 class CardList extends Component {
 
 
-  async componentDidMount(){
+  async componentDidMount() {
     const getMovies = await fetchMovies();
-    // console.log(getMovies);
-    this.props.addMovieFunction(getMovies);
+   const movieData = this.props.addMovieFunction(getMovies);
+  // const allMovies = getMovies.map(movie => {
+  //     let title = movie.title
+  //     let overview = movie.overview
+  //     let poster = movie.poster
+  //     let vote = movie.vote
+  //     let backdrop = movie.backdrop
+  //  console.log(poster)
+  //  })
   }
 
-  // movieCard(movies){
-  //   const movieCard = movies.map((movie) => {
-  //     return <Card
-  //     title = {movie.title}
-  //     overview = {movie.overview}
-  //     poster = {movie.poster}
-  //     vote = {movie.vote}
-  //     backdrop = {movie.backdrop}
-  //   />
-  //   })
+  buildMovieCards() {
+     const movieCards = movies.map((movie) => {
+      console.log(movie.title)
+      return <Card 
+      title = {movie.title}
+      overview = {movie.overview}
+      poster = {movie.poster}
+      vote = {movie.vote}
+      backdrop = {movie.backdrop}
+      />
+    })
+  }
+
+  //  movieCard(movies) {
   // }
 
   render(){
     return(
-      <div> movieCard </div>
+      <div>
+       
+      </div>
     )
   }
 }
