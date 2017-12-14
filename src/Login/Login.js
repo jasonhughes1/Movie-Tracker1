@@ -1,7 +1,9 @@
 import React, {Component} from 'react';
+import { connect } from 'react-redux';
+import { loginAction } from './LoginActions.js';
 
 
-export default class Login extends Component {
+class Login extends Component {
   constructor() {
     super();
   }
@@ -10,15 +12,29 @@ export default class Login extends Component {
   render() {
     return(
       <div className = 'login'>
-        <h2>register</h2>
-
+        <h2>LOGIN PAGE</h2>
         <input
           placeholder = 'email'/>
         <input
           placeholder = 'password'/>
-
         <button>submit</button>
       </div>
     )
   }
 }
+
+const mapStateToProps = (store) => {
+  return {
+    login: store.login
+  }
+}
+
+const mapDispatchToProps = (dispatch) => {
+  return {
+    loginFunction: () => {
+      dispatch(loginAction())
+    }
+  }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(Login);
