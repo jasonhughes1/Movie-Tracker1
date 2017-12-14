@@ -11,36 +11,23 @@ class CardList extends Component {
   async componentDidMount() {
     const getMovies = await fetchMovies();
    const movieData = this.props.addMovieFunction(getMovies);
-  // const allMovies = getMovies.map(movie => {
-  //     let title = movie.title
-  //     let overview = movie.overview
-  //     let poster = movie.poster
-  //     let vote = movie.vote
-  //     let backdrop = movie.backdrop
-  //  console.log(poster)
-  //  })
-  }
+}
 
-  buildMovieCards() {
-     const movieCards = movies.map((movie) => {
-      console.log(movie.title)
-      return <Card 
-      title = {movie.title}
-      overview = {movie.overview}
-      poster = {movie.poster}
-      vote = {movie.vote}
-      backdrop = {movie.backdrop}
-      />
-    })
-  }
-
-  //  movieCard(movies) {
-  // }
 
   render(){
+    const movieCards = this.props.movies.map((movie) => {
+     return <Card
+     title = {movie.title}
+     overview = {movie.overview}
+     poster = {movie.poster}
+     vote = {movie.vote}
+     backdrop = {movie.backdrop}
+     />
+   })
+
     return(
       <div>
-       
+       {movieCards}
       </div>
     )
   }
