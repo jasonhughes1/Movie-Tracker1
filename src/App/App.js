@@ -11,9 +11,8 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <CardList />
         <Route path='/' component={NavBar} key='NavBar'/>
-        <Route exact path='/cardlist' component={CardList} key='CardList'/>
+        <Route exact path='/' component={CardList} key='CardList'/>
         <h1 className="App-title">MovieTracker</h1>
       </div>
     );
