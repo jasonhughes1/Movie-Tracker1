@@ -19,15 +19,18 @@ async function fetchMovies(){
      return Promise.all(movies)
   }
 
-  const userLogin = async (data) => {
-    const postUser = await fetch('http://localhost3000/api/user', {
+  export const userLogin = async (data) => {
+    const postUser = await fetch('/api/users', {
       method: 'POST',
       body: JSON.stringify(data),
       headers: {
         'Content-Type': 'application/json'
       }
     })
+
+
     const initialPost = await postUser.json()
+    return initialPost;
   }
 
 
