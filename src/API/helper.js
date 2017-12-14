@@ -6,7 +6,6 @@ async function fetchMovies(){
   return Promise.all(movie)
 
   }
-
   async function fetchMovie(movie) {
      const movies = await movie.map( movie => {
       let title = movie.title;
@@ -20,6 +19,17 @@ async function fetchMovies(){
      return Promise.all(movies)
   }
 
+  const userLogin = async (data) => {
+    const postUser = await fetch('http://localhost3000/api/user', {
+      method: 'POST',
+      body: JSON.stringify(data),
+      headers: {
+        'Content-Type': 'application/json'
+      }
+    })
+    const initialPost = await postUser.json()
+  }
 
 
-  export default { fetchMovies };
+
+  export default { fetchMovies, userLogin };
