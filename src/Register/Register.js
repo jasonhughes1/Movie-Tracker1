@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 import { userLogin, userRegister } from '../API/helper';
 import { connect } from 'react-redux';
 import { browserHistory } from 'react-router-dom';
-import { loginSuccess} from '../Login/LoginActions';
+import { loginSuccess} from '../Actions/Actions';
 
 
 class Register extends Component {
@@ -68,7 +68,7 @@ async logInNewUser(newUserData) {
         {this.state.passwordError &&
           <h2>Passwords do not match, please try again.</h2>}
         {this.state.signUpError &&
-          <h2>Email Already Exists, please login or use a different email!</h2>} 
+          <h2>Email Already Exists, please login or use a different email!</h2>}
         <input
           type='text'
           placeholder='Name'
