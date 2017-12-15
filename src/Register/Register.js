@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import { userLogin, userRegister } from '../API/helper';
 import { connect } from 'react-redux';
-import { Redirect } from 'react-router-dom';
+import { browserHistory } from 'react-router-dom';
 import { loginSuccess} from '../Login/LoginActions';
 
 
@@ -45,6 +45,7 @@ async logInNewUser(newUserData) {
   if(newUserData.status === 'success') {
     const userData = await userLogin(this.state.email, this.state.password);
     this.props.loginSuccess(userData.data);
+    this.props.history.push('/')
   } else {
     this.setState({
       signUpError: true
@@ -67,8 +68,7 @@ async logInNewUser(newUserData) {
         {this.state.passwordError &&
           <h2>Passwords do not match, please try again.</h2>}
         {this.state.signUpError &&
-          <h2>Email Already Exists, please login or use a different email!</h2>}
-        {this.props.user.id && <Redirect to="/" />}
+          <h2>Email Already Exists, please login or use a different email!</h2>} 
         <input
           type='text'
           placeholder='Name'
