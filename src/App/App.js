@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
 import './App.css';
-import CardList from '../CardList/CardList';
-import NavBar from '../NavBar/NavBar';
+import CardList from '../Containers/CardList/CardList';
+import NavBar from '../Components/NavBar/NavBar';
 import { Route } from 'react-router-dom';
-import Login from '../Login/Login.js';
-import Register from '../Register/Register.js'
+import Login from '../Containers/Login/Login.js';
+import Register from '../Containers/Register/Register.js'
 
 class App extends Component {
 
