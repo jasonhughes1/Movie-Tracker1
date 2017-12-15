@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import { connect } from 'react-redux';
-import { loginSuccess } from './LoginActions.js';
+import { loginSuccess } from '../Actions/Actions';
 import helper from '../API/helper.js';
 import { browserHistory } from 'react-router-dom'
 const { userLogin } = helper;

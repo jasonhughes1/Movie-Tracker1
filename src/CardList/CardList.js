@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import helper from '../API/helper.js';
 import { connect } from 'react-redux';
-import { addMovies } from './CardListActions.js';
+import { addMovies } from '../Actions/Actions';
 import Card from '../Card/Card'
 const { fetchMovies } = helper;
 
