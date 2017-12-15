@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import { connect } from 'react-redux';
-import { loginAction } from './LoginActions.js';
+import { loginSuccess } from './LoginActions.js';
 import helper from '../API/helper.js';
 const { userLogin } = helper;
 
@@ -9,8 +9,9 @@ class Login extends Component {
   constructor() {
     super()
     this.state = {
-      email: '',
-      password: ''
+      email: 'tman2272@aol.com',
+      password: 'password',
+      loginError: false
     }
   }
 
@@ -18,6 +19,15 @@ handleChange = (key, event) => {
   this.setState({[key]: event.target.value})
 }
 
+logIn = async (cred) => {
+  const loggedIn = await userLogin(cred);
+
+  if (loggedIn) {
+    this.props.loginSuccess(loggedIn);
+  } else {
+    alert('invalid login');
+  }
+}
 
 
   render() {
@@ -34,7 +44,7 @@ handleChange = (key, event) => {
                  value={this.state.passord}
               onChange={(event) => this.handleChange('password', event)}
         />
-        <button onClick={(event) => this.props.userLogin(this.state)}>submit</button>
+        <button onClick={(event) => this.logIn(this.state)}>submit</button>
       </div>
     )
   }
@@ -48,8 +58,8 @@ const mapStateToProps = (store) => {
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    userLogin: (email, password) => {
-      dispatch(loginAction(email, password))
+    loginSuccess: (email, password) => {
+      dispatch(loginSuccess(email, password))
     }
   }
 }

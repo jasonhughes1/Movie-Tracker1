@@ -20,6 +20,7 @@ async function fetchMovies(){
   }
 
   export const userLogin = async (data) => {
+    try {
     const postUser = await fetch('/api/users', {
       method: 'POST',
       body: JSON.stringify(data),
@@ -27,11 +28,14 @@ async function fetchMovies(){
         'Content-Type': 'application/json'
       }
     })
-
-
     const initialPost = await postUser.json()
-    return initialPost;
+    return initialPost
+    } catch(error){
+      return false;
+      // throw Error('error')
+    }
   }
+
 
 
 
