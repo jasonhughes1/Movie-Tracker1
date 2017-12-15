@@ -24,15 +24,27 @@ async function fetchMovies(){
     const postUser = await fetch('/api/users', {
       method: 'POST',
       body: JSON.stringify(data),
-      headers: {
-        'Content-Type': 'application/json'
-      }
+      headers: {'Content-Type': 'application/json'}
     })
     const initialPost = await postUser.json()
     return initialPost
     } catch(error){
       return false;
-      // throw Error('error')
+    }
+  }
+
+
+  export const userRegister = async (email, password, name) => {
+    try {
+      const registerUser = await fetch('/api/users/new', {
+        method: 'POST',
+        body: JSON.stringify({ email, password, name }),
+        headers: {'Content-Type': 'application/json'}
+      })
+      const initialRegister = await registerUser.json()
+      return initialRegister
+    } catch(error){
+      return false;
     }
   }
 
