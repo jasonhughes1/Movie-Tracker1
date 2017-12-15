@@ -1,7 +1,10 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
+import { connect } from 'react-redux';
 
-const NavBar = () => {
+const NavBar = (props) => {
+  console.log('propsinnavbar', props);
+  if(Object.keys(props.user).length === 0) {
   return (
     <div className='nav-bar'>
       <NavLink className='nav' to='/'>Movies</NavLink>
@@ -10,5 +13,20 @@ const NavBar = () => {
     </div>
   )
 }
+ else {
+  return (
+    <div className='nav-bar'>
+      <NavLink className='nav' to='/'>Movies</NavLink>
+    </div>
+  )
+}
+}
 
-export default NavBar;
+
+export const mapStateToProps = (store) => {
+  return {
+    user: store.user
+  }
+}
+
+export default connect(mapStateToProps, null)(NavBar)
