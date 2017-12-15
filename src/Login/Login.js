@@ -2,15 +2,17 @@ import React, {Component} from 'react';
 import { connect } from 'react-redux';
 import { loginSuccess } from './LoginActions.js';
 import helper from '../API/helper.js';
+import { browserHistory } from 'react-router-dom'
 const { userLogin } = helper;
+
 
 
 class Login extends Component {
   constructor() {
     super()
     this.state = {
-      email: 'tman2272@aol.com',
-      password: 'password',
+      email: '',
+      password: '',
       loginError: false
     }
   }
@@ -24,6 +26,7 @@ logIn = async (cred) => {
 
   if (loggedIn) {
     this.props.loginSuccess(loggedIn);
+    this.props.history.push('/')
   } else {
     alert('invalid login');
   }
