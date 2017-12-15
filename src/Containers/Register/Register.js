@@ -1,8 +1,8 @@
 import React, {Component} from 'react';
-import { userLogin, userRegister } from '../API/helper';
+import { userLogin, userRegister } from '../../API/helper';
 import { connect } from 'react-redux';
 import { browserHistory } from 'react-router-dom';
-import { loginSuccess} from '../Actions/Actions';
+import { loginSuccess} from '../../Actions/Actions';
 
 
 class Register extends Component {

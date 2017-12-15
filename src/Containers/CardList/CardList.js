@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
-import helper from '../API/helper.js';
+import helper from '../../API/helper.js';
 import { connect } from 'react-redux';
-import { addMovies } from '../Actions/Actions';
-import Card from '../Card/Card'
+import { addMovies } from '../../Actions/Actions';
+import Card from '../../Components/Card/Card'
 const { fetchMovies } = helper;
 
 class CardList extends Component {
@@ -18,6 +18,7 @@ class CardList extends Component {
     const movieCards = this.props.movies.map((movie) => {
       // console.log(movie);
      return <Card
+     key = {movie.title}
      title = {movie.title}
      overview = {movie.overview}
      poster = {movie.poster}
