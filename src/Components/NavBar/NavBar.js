@@ -16,6 +16,7 @@ class NavBar extends Component {
 }
 
 render() {
+  let mappedName = this.props.user.map(name => name.data.name)
   if(Object.keys(this.props.user).length === 0) {
   return (
     <div className='nav-bar'>
@@ -28,9 +29,10 @@ render() {
 }
  else {
   return (
+
     <div className='nav-bar'>
       <NavLink className='nav' to='/'>Movies</NavLink>
-      <h4>Welcome</h4>
+      <h4 className = 'welcome'>Welcome, <span>{mappedName}</span></h4>
       <button onClick = {this.props.logout}>log out</button>
     </div>
   )

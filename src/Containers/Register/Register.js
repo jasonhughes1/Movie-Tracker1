@@ -3,6 +3,7 @@ import { userLogin, userRegister } from '../../API/helper';
 import { connect } from 'react-redux';
 import { browserHistory } from 'react-router-dom';
 import { loginSuccess} from '../../Actions/Actions';
+import './Register.css';
 
 
 class Register extends Component {
@@ -64,36 +65,39 @@ async logInNewUser(newUserData) {
 
   render() {
     return (
-      <form onSubmit={(event) => this.handleRegister(event)}>
-        {this.state.passwordError &&
-          <h2>Passwords do not match, please try again.</h2>}
-        {this.state.signUpError &&
-          <h2>Email Already Exists, please login or use a different email!</h2>}
-        <input
-          type='text'
-          placeholder='Name'
-          onChange={(event) => this.handleChange('name', event)}
-        />
-        <input
-          type='email'
-          placeholder='Email'
-          onChange={(event) => this.handleChange('email', event)}
-        />
-        <input
-          type='password'
-          placeholder='Password'
-          onChange={(event) => this.handleChange('password', event)}
-        />
-        <input
-          type='password'
-          placeholder='Please Retype Password'
-          onChange={(event) => this.handleChange('retypePassword', event)}
-        />
-        <button type='submit'
-          disabled={this.state.disabled}>
-            Register
-        </button>
-      </form>
+      <div className = 'register-container'>
+        <form
+          onSubmit={(event) => this.handleRegister(event)}>
+          {this.state.passwordError &&
+            <h2>Passwords do not match, please try again.</h2>}
+          {this.state.signUpError &&
+            <h2>Email Already Exists, please login or use a different email!</h2>}
+          <input
+            type='text'
+            placeholder='Name'
+            onChange={(event) => this.handleChange('name', event)}
+          />
+          <input
+            type='email'
+            placeholder='Email'
+            onChange={(event) => this.handleChange('email', event)}
+          />
+          <input
+            type='password'
+            placeholder='Password'
+            onChange={(event) => this.handleChange('password', event)}
+          />
+          <input
+            type='password'
+            placeholder='Please Retype Password'
+            onChange={(event) => this.handleChange('retypePassword', event)}
+          />
+          <button type='submit'
+            disabled={this.state.disabled}>
+              Register
+          </button>
+        </form>
+      </div>
     );
   }
 }
