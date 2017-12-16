@@ -1,4 +1,4 @@
-import { addMoviesReducer } from './CardListReducers';
+import { addMoviesReducer } from '../Reducers/Reducers';
 import CardListActions from './CardListActions';
 
 describe('CardList Reducer', () => {
