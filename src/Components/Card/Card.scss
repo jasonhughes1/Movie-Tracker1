@@ -21,3 +21,19 @@
 .vote {
   display: none;
 }
+
+.image-container{
+}
+
+.favorite {
+  height: 30px;
+  width: 30px;
+  border: none;
+  position: absolute;
+  background: none;
+  background-image: url('../../Imagery/like.svg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  opacity: 0.8;
+  float: right;
+}
