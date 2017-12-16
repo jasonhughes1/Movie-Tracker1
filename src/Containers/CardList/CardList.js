@@ -10,20 +10,19 @@ class CardList extends Component {
 
   async componentDidMount() {
     const getMovies = await fetchMovies();
-   const movieData = this.props.addMovieFunction(getMovies);
+    const movieData = this.props.addMovieFunction(getMovies);
 }
 
 
   render(){
     const movieCards = this.props.movies.map((movie) => {
-      // console.log(movie);
      return <Card
-     key = {movie.title}
-     title = {movie.title}
-     overview = {movie.overview}
-     poster = {movie.poster}
-     vote = {movie.vote}
-     backdrop = {movie.backdrop}
+       key = {movie.title}
+       title = {movie.title}
+       overview = {movie.overview}
+       poster = {movie.poster}
+       vote = {movie.vote}
+       backdrop = {movie.backdrop}
      />
    })
 
@@ -46,7 +45,7 @@ const mapDispatchToProps = (dispatch) => {
  return {
   addMovieFunction: (getMovies) => {
     dispatch(addMovies(getMovies));
-  }
+   }
   }
 }
 

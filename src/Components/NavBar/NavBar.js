@@ -1,9 +1,16 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
 import { connect } from 'react-redux';
+import { logout } from '../../Actions/Actions'
 
 const NavBar = (props) => {
-  console.log('propsinnavbar', props);
+
+
+ const handleLogout = (props) => {
+  logout()
+}
+
+
   if(Object.keys(props.user).length === 0) {
   return (
     <div className='nav-bar'>
@@ -17,6 +24,8 @@ const NavBar = (props) => {
   return (
     <div className='nav-bar'>
       <NavLink className='nav' to='/'>Movies</NavLink>
+      <h4>Welcome</h4>
+      <button onClick = {handleLogout}>log out</button>
     </div>
   )
 }
@@ -29,4 +38,12 @@ export const mapStateToProps = (store) => {
   }
 }
 
-export default connect(mapStateToProps, null)(NavBar)
+export const mapDispatchToProps = (dispatch) => {
+  return {
+    logout: () => {
+      dispatch(logout())
+    }
+  }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(NavBar)

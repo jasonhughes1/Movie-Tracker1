@@ -16,3 +16,10 @@ export const RegisterAction = (newUser) => {
     newUser
   }
 }
+
+export const logout = (user) => {
+  return {
+    type: 'LOGOUT',
+    user
+  }
+}
