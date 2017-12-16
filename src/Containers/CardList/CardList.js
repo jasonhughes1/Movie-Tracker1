@@ -1,17 +1,26 @@
 import React, { Component } from 'react';
-
 import { connect } from 'react-redux';
-
 import Card from '../../Components/Card/Card';
 import './CardList.css'
 
 
 class CardList extends Component {
+  constructor() {
+    super();
+    this.state = {
+      favorites: []
+    }
+    this.addFavorite = this.addFavorite.bind(this);
+  }
 
+ addFavorite(card)  {
+  console.log(card)
+    this.setState({favorites: [...this.state.favorites, card]})
+  }
 
 
   render() {
-    console.log(this.props.movies);
+    console.log(this.state.favorites);
     const movieCards = this.props.movies.map((movie) => {
      return <Card
        key = {movie.title}
@@ -21,6 +30,7 @@ class CardList extends Component {
        vote = {movie.vote}
        backdrop = {movie.backdrop}
        favorite={movie.favorite}
+       favorites={this.addFavorite}
      />
    })
 
