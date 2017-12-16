@@ -1,18 +1,22 @@
-import React from 'react';
+import React, { Component } from 'react';
 import { NavLink } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { logout } from '../../Actions/Actions';
 import './NavBar.css'
+import helper from '../../API/helper.js';
+import { addMovies } from '../../Actions/Actions';
+const { fetchMovies } = helper;
 
-const NavBar = (props) => {
-
-
-//  const handleLogout = (props) => {
-//
-// }
+class NavBar extends Component {
 
 
-  if(Object.keys(props.user).length === 0) {
+ async componentDidMount() {
+    const getMovies = await fetchMovies();
+    const movieData = this.props.addMovieFunction(getMovies);
+}
+
+render() {
+  if(Object.keys(this.props.user).length === 0) {
   return (
     <div className='nav-bar'>
       <p className='logo'>MOVIE <span className = 'logo-two'>TRACKER</span></p>
@@ -27,9 +31,10 @@ const NavBar = (props) => {
     <div className='nav-bar'>
       <NavLink className='nav' to='/'>Movies</NavLink>
       <h4>Welcome</h4>
-      <button onClick = {props.logout}>log out</button>
+      <button onClick = {this.props.logout}>log out</button>
     </div>
   )
+ }
 }
 }
 
@@ -44,7 +49,10 @@ export const mapDispatchToProps = (dispatch) => {
   return {
     logout: () => {
       dispatch(logout())
-    }
+    },
+     addMovieFunction: (getMovies) => {
+    dispatch(addMovies(getMovies));
+   }
   }
 }
 
