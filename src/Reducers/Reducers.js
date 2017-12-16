@@ -28,3 +28,12 @@ export const newUser = (store = [], action) => {
       return store;
   }
 }
+
+export const userLogout = (store = [], action) => {
+  switch (action.type) {
+    case 'LOGOUT':
+    return {};
+    default:
+      return store;
+  }
+}
