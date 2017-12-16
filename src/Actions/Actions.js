@@ -17,9 +17,8 @@ export const RegisterAction = (newUser) => {
   }
 }
 
-export const logout = (user) => {
+export const logout = () => {
   return {
-    type: 'LOGOUT',
-    user
+    type: 'LOGOUT'
   }
 }

@@ -2,7 +2,8 @@ import React, { Component } from 'react';
 import helper from '../../API/helper.js';
 import { connect } from 'react-redux';
 import { addMovies } from '../../Actions/Actions';
-import Card from '../../Components/Card/Card'
+import Card from '../../Components/Card/Card';
+import './CardList.css'
 const { fetchMovies } = helper;
 
 class CardList extends Component {
@@ -27,7 +28,7 @@ class CardList extends Component {
    })
 
     return(
-      <div>
+      <div className = 'card-list'>
        {movieCards}
       </div>
     )
