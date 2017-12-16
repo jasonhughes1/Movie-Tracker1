@@ -1,21 +1,16 @@
 import React, { Component } from 'react';
-import helper from '../../API/helper.js';
+
 import { connect } from 'react-redux';
-import { addMovies } from '../../Actions/Actions';
+
 import Card from '../../Components/Card/Card';
 import './CardList.css'
-const { fetchMovies } = helper;
+
 
 class CardList extends Component {
 
 
-  async componentDidMount() {
-    const getMovies = await fetchMovies();
-    const movieData = this.props.addMovieFunction(getMovies);
-}
-
-
-  render(){
+ 
+  render() {
     const movieCards = this.props.movies.map((movie) => {
      return <Card
        key = {movie.title}
@@ -32,8 +27,9 @@ class CardList extends Component {
        {movieCards}
       </div>
     )
-  }
+ }
 }
+
 
 const mapStateToProps = (store) => {
   return {
@@ -42,12 +38,12 @@ const mapStateToProps = (store) => {
 }
 
 
-const mapDispatchToProps = (dispatch) => {
- return {
-  addMovieFunction: (getMovies) => {
-    dispatch(addMovies(getMovies));
-   }
-  }
-}
+// const mapDispatchToProps = (dispatch) => {
+//  return {
+//   addMovieFunction: (getMovies) => {
+//     dispatch(addMovies(getMovies));
+//    }
+//   }
+// }
 
-export default connect(mapStateToProps, mapDispatchToProps)(CardList);
+export default connect(mapStateToProps, null)(CardList);
