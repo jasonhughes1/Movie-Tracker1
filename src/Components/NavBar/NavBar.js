@@ -16,7 +16,6 @@ class NavBar extends Component {
 }
 
 render() {
-  let mappedName = this.props.user.map(name => name.data.name)
   if(Object.keys(this.props.user).length === 0) {
   return (
     <div className='nav-bar'>
@@ -28,8 +27,8 @@ render() {
   )
 }
  else {
+   let mappedName = this.props.user.map(name => name.data.name)
   return (
-
     <div className='nav-bar'>
       <NavLink className='nav' to='/'>Movies</NavLink>
       <h4 className = 'welcome'>Welcome, <span>{mappedName}</span></h4>
