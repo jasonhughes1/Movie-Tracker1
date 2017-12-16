@@ -8,10 +8,11 @@ describe('Reducer Tests', () => {
    const expected = []
    expect(addMoviesReducer(undefined, {})).toEqual(expected)
  });
-});
 
-// it('should return a new state with movies added', () => {
-//   const movie = {title: "Justice League", poster: "/9rtrRGeRnL0JKtu9IMBWsmlmmZz.jpg", vote: 6.6, overview: "Fueled by his restored faith in humanity and inspi… are on the hunt for three Mother Boxes on Earth.", backdrop: "/o5T8rZxoWSBMYwjsUFUqTt6uMQB.jpg"}
-//   const expected = [movie]
-//   expect(addMoviesReducer(actions.addMovies(movie))).toEqual(expected)
-// })
+
+it('should return a new state with movies added', () => {
+  const movie = {title: "Justice League", poster: "/Zz.jpg", vote: 6.6, overview: "Fueled.", backdrop: "/o5T8MQB.jpg"}
+  const expected = [movie]
+  expect(addMoviesReducer(undefined, actions.addMovies(movie))).toEqual(expected)
+  })
+});
