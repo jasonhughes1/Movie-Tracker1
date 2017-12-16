@@ -13,7 +13,7 @@ async function fetchMovies(){
       let poster = movie.poster_path;
       let vote = movie.vote_average;
       let backdrop = movie.backdrop_path;
-      return Object.assign({}, {title, poster, vote, overview, backdrop})
+      return {title, poster, vote, overview, backdrop, favorite: false}
     });
 
      return Promise.all(movies)
@@ -33,7 +33,6 @@ async function fetchMovies(){
     }
   }
 
-
   export const userRegister = async (email, password, name) => {
     try {
       const registerUser = await fetch('/api/users/new', {
@@ -47,7 +46,6 @@ async function fetchMovies(){
       return false;
     }
   }
-
 
 
 

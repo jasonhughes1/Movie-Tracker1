@@ -13,8 +13,8 @@ class Login extends Component {
   constructor() {
     super()
     this.state = {
-      email: '',
-      password: '',
+      email: 'jason@email.com',
+      password: 'password',
       loginError: false
     }
   }

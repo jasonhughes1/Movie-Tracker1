@@ -9,8 +9,9 @@ import './CardList.css'
 class CardList extends Component {
 
 
- 
+
   render() {
+    console.log(this.props.movies);
     const movieCards = this.props.movies.map((movie) => {
      return <Card
        key = {movie.title}
@@ -19,6 +20,7 @@ class CardList extends Component {
        poster = {movie.poster}
        vote = {movie.vote}
        backdrop = {movie.backdrop}
+       favorite={movie.favorite}
      />
    })
 

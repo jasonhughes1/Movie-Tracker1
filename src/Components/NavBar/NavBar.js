@@ -31,6 +31,7 @@ render() {
   return (
     <div className='nav-bar'>
       <NavLink className='nav' to='/'>Movies</NavLink>
+      <NavLink className='fav' to='/favorites'>Favorites</NavLink>
       <h4 className = 'welcome'>Welcome, <span>{mappedName}</span></h4>
       <button onClick = {this.props.logout}>log out</button>
     </div>
