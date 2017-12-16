@@ -3,6 +3,8 @@ import { connect } from 'react-redux';
 import { loginSuccess } from '../../Actions/Actions';
 import helper from '../../API/helper.js';
 import { browserHistory } from 'react-router-dom'
+import './Login.css'
+
 const { userLogin } = helper;
 
 
@@ -38,16 +40,20 @@ logIn = async (cred) => {
       <div className = 'login'>
         <h2>LOGIN PAGE</h2>
         <input
+          className = 'email'
           placeholder = 'email'
                  value={this.state.email}
               onChange={(event) => this.handleChange('email', event)}
         />
         <input
+          className = 'password'
           placeholder = 'password'
                  value={this.state.passord}
               onChange={(event) => this.handleChange('password', event)}
         />
-        <button onClick={(event) => this.logIn(this.state)}>submit</button>
+        <button
+          className = 'submit-button'
+          onClick={(event) => this.logIn(this.state)}>submit</button>
       </div>
     )
   }

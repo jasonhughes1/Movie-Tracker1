@@ -1,3 +1,18 @@
 .nav-bar {
+  position: fixed;
   display: flex;
-  justify-content: space-between; }
+  justify-content: space-around;
+  width: 100%;
+  background: black;
+  padding-top: 30px;
+  height: 50px; }
+
+.nav {
+  color: white; }
+
+.logo {
+  color: blue;
+  margin: 0px; }
+
+.logo-two {
+  color: white; }
