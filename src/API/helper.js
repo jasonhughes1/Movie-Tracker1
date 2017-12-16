@@ -47,6 +47,8 @@ async function fetchMovies(){
     }
   }
 
+  
 
 
-  export default { fetchMovies, userLogin };
+
+  export default { fetchMovies, userLogin};
