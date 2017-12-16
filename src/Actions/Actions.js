@@ -4,6 +4,7 @@ export const addMovies = (movie) => ({
 })
 
 export const loginSuccess = (user) => {
+  console.log('user', user);
   return {
     type: 'LOGIN_SUCCESS',
     user
@@ -18,6 +19,7 @@ export const loginSuccess = (user) => {
 // }
 
 export const RegisterAction = (newUser) => {
+  console.log(newUser);
   return {
     type: 'REGISTER_ACTION',
     newUser

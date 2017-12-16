@@ -3,6 +3,7 @@ import { userLogin, userRegister } from '../../API/helper';
 import { connect } from 'react-redux';
 import { browserHistory } from 'react-router-dom';
 import { loginSuccess} from '../../Actions/Actions';
+import { RegisterAction } from '../../Actions/Actions';
 import './Register.css';
 
 
@@ -23,7 +24,7 @@ class Register extends Component {
 
   async handleRegister(event) {
     event.preventDefault();
-    this.logInNewUser( await this.createNewUser());
+    await this.createNewUser();
   }
 
 
@@ -34,7 +35,9 @@ async createNewUser() {
       this.state.password,
       this.state.name
     );
-    return newUserData
+    if(newUserData.status === 'success') {
+    return this.logInNewUser(newUserData)
+    }
   } else {
     this.setState({
       passwordError: true
@@ -44,8 +47,9 @@ async createNewUser() {
 
 async logInNewUser(newUserData) {
   if(newUserData.status === 'success') {
-    const userData = await userLogin(this.state.email, this.state.password);
-    this.props.loginSuccess(userData.data);
+    const userData = await userLogin({email: this.state.email, password: this.state.password});
+    console.log(userData.data);
+    this.props.loginSuccess(userData);
     this.props.history.push('/')
   } else {
     this.setState({
@@ -54,14 +58,12 @@ async logInNewUser(newUserData) {
   }
 }
 
-
   handleChange(input, event) {
     this.setState({
       [input]: event.target.value,
       disabled: !this.state.email || !this.state.password || !this.state.name
     });
   }
-
 
   render() {
     return (
@@ -107,7 +109,8 @@ const mapStateToProps = (store) => ({
 });
 
 const mapDispatchToProps = (dispatch) => ({
-  loginSuccess: ( user ) => { dispatch(loginSuccess(user))}
+  loginSuccess: ( user ) => { dispatch(loginSuccess(user))},
+  RegisterSuccess: (user, email, password) => {dispatch(RegisterAction(user, email, password))}
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(Register);
