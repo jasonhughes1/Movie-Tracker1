@@ -2,35 +2,35 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import Card from '../../Components/Card/Card';
 import './CardList.css'
-import { addFavorite } from '../../Actions/Actions';
+import { addFavorite, loginSuccess } from '../../Actions/Actions';
 import { fetchFavorites } from '../../API/helper.js';
 
 
 class CardList extends Component {
-  constructor() {
-    super();
-    this.state = {
-      favorites: []
-    }
-    this.addFavorite = this.addFavorite.bind(this);
-  }
 
- addFavorite(card)  {
-    this.setState({favorites: [...this.state.favorites, card]})
+
+addFavoriteMovie = async (movie) => {
+  if(this.props.user[0]) {
+    await fetchFavorites(movie, this.props.user[0].data.id);
+    this.props.addFavorite(movie);
+  } else {
+    this.props.history.push('/login');
   }
+}
 
 
   render() {
     const movieCards = this.props.movies.map((movie) => {
      return <Card
-       key = {movie.title}
+       key = {movie.id}
+       movie={movie}
        title = {movie.title}
        overview = {movie.overview}
        poster = {movie.poster}
        vote = {movie.vote}
        backdrop = {movie.backdrop}
-       favorite={movie.favorite}
-       favorites={this.addFavorite}
+       addToFavorites={this.addFavoriteMovie}
+       user={this.props.user}
      />
    })
 
@@ -44,6 +44,7 @@ class CardList extends Component {
 
 const mapStateToProps = (store) => {
   return {
+    user: store.user,
     movies: store.movies,
     favorites: store.favorite
   }
@@ -53,6 +54,9 @@ const mapDispatchToProps = (dispatch) => {
   return {
     addFavorite: (favorite) => {
       dispatch(addFavorite(favorite));
+    },
+    loginSuccess: (user) => {
+      dispatch(loginSuccess(user))
     }
   }
 }

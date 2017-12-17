@@ -13,7 +13,10 @@ async function fetchMovies(){
       let poster = movie.poster_path;
       let vote = movie.vote_average;
       let backdrop = movie.backdrop_path;
-      return {title, poster, vote, overview, backdrop, favorite: false}
+      let movieid = movie.id;
+      let release_date= movie.release_date;
+
+      return {movieid, release_date, title, poster, vote, overview, backdrop, favorite: false}
     });
 
      return Promise.all(movies)
@@ -47,11 +50,21 @@ async function fetchMovies(){
     }
   }
 
-  export const fetchFavorites = async (favorite) => {
+  export const fetchFavorites = async (movie, userid) => {
     try {
-      const fetchFavorites = await fetch('/api/users/favorites/new', {
+      console.log('movie', movie);
+      const fetchFavorites = await
+      fetch('/api/users/favorites/new', {
         method: 'POST',
-        body: JSON.stringify(favorite),
+        body: JSON.stringify({
+          movie_id: movie.movieid,
+          user_id: userid,
+          title: movie.title,
+          poster_path: movie.poster,
+          release_date: movie.release_date,
+          vote_average: movie.vote,
+          overview: movie.overview
+          }),
         headers: {'Content-Type': 'application/json'}
       })
       const favoriteData = await fetchFavorites.json();
@@ -63,5 +76,5 @@ async function fetchMovies(){
 
 
 
-  
+
   export default { fetchMovies, userLogin, userRegister, fetchFavorites };
