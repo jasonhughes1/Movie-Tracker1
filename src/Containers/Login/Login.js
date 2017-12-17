@@ -39,17 +39,17 @@ logIn = async (cred) => {
     return(
       <div className = 'login'>
         <h2 className='welcome-text'>Welcome Back!</h2>
-        <p>email</p>
         <input
           className = 'email'
-                 value={this.state.email}
-              onChange={(event) => this.handleChange('email', event)}
+          placeholder = 'email'
+          value={this.state.email}
+          onChange={(event) => this.handleChange('email', event)}
         />
-        <p>password</p>
         <input
           className = 'password'
-                 value={this.state.passord}
-              onChange={(event) => this.handleChange('password', event)}
+          placeholder = 'password'
+          value={this.state.passord}
+          onChange={(event) => this.handleChange('password', event)}
         />
         <button
           className = 'submit-button'
