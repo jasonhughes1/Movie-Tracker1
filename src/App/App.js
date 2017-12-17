@@ -4,7 +4,8 @@ import CardList from '../Containers/CardList/CardList';
 import NavBar from '../Components/NavBar/NavBar';
 import { Route } from 'react-router-dom';
 import Login from '../Containers/Login/Login.js';
-import Register from '../Containers/Register/Register.js'
+import Register from '../Containers/Register/Register.js';
+import Favorites from '../Components/Favorites/Favorites';
 
 class App extends Component {
 
@@ -18,6 +19,7 @@ class App extends Component {
         <Route exact path='/' component={CardList} key='CardList'/>
         <Route exact path='/login' component={Login} key='login' />
         <Route exact path='/register' component={Register} key='register' />
+        <Route exact path='/favorites' component={Favorites} key='favorites' />
       </div>
     );
   }

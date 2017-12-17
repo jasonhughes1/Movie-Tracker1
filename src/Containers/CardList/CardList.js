@@ -9,14 +9,25 @@ import { fetchFavorites } from '../../API/helper.js';
 class CardList extends Component {
 
 
-addFavoriteMovie = async (movie) => {
+addFavoriteMovie = (movie) => {
   if(this.props.user[0]) {
-    await fetchFavorites(movie, this.props.user[0].data.id);
-    this.props.addFavorite(movie);
+   this.checkFavorites(movie);   
   } else {
     this.props.history.push('/login');
   }
 }
+
+ checkFavorites = async (movie) => {
+  const movieFoundInFavs = this.props.favorites.find(favorite => {
+    return favorite.movieid === movie.movieid
+  })
+  if(!movieFoundInFavs) {
+    await fetchFavorites(movie, this.props.user[0].data.id);
+    this.props.addFavorite(movie); 
+  } else {
+    alert('This movie is already in your favorites!')
+  }
+ }
 
 
   render() {
@@ -34,11 +45,11 @@ addFavoriteMovie = async (movie) => {
      />
    })
 
-    return(
+    return (
       <div className = 'card-list'>
        {movieCards}
       </div>
-    )
+    );
  }
 }
 
