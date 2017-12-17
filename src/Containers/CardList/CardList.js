@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import Card from '../../Components/Card/Card';
 import './CardList.css'
+import { addFavorite } from '../../Actions/Actions';
+import { fetchFavorites } from '../../API/helper.js';
 
 
 class CardList extends Component {
@@ -14,13 +16,11 @@ class CardList extends Component {
   }
 
  addFavorite(card)  {
-  console.log(card)
     this.setState({favorites: [...this.state.favorites, card]})
   }
 
 
   render() {
-    console.log(this.state.favorites);
     const movieCards = this.props.movies.map((movie) => {
      return <Card
        key = {movie.title}
@@ -42,20 +42,19 @@ class CardList extends Component {
  }
 }
 
-
 const mapStateToProps = (store) => {
   return {
-    movies: store.movies
+    movies: store.movies,
+    favorites: store.favorite
   }
 }
 
+const mapDispatchToProps = (dispatch) => {
+  return {
+    addFavorite: (favorite) => {
+      dispatch(addFavorite(favorite));
+    }
+  }
+}
 
-// const mapDispatchToProps = (dispatch) => {
-//  return {
-//   addMovieFunction: (getMovies) => {
-//     dispatch(addMovies(getMovies));
-//    }
-//   }
-// }
-
-export default connect(mapStateToProps, null)(CardList);
+export default connect(mapStateToProps, mapDispatchToProps)(CardList);

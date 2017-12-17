@@ -4,22 +4,13 @@ export const addMovies = (movie) => ({
 })
 
 export const loginSuccess = (user) => {
-  console.log('user', user);
   return {
     type: 'LOGIN_SUCCESS',
     user
   }
 }
 
-// export const loginFailure = (user) => {
-//   return {
-//     type: 'LOGIN_FAILURE',
-//     user
-//   }
-// }
-
 export const RegisterAction = (newUser) => {
-  console.log(newUser);
   return {
     type: 'REGISTER_ACTION',
     newUser
@@ -29,5 +20,12 @@ export const RegisterAction = (newUser) => {
 export const logout = () => {
   return {
     type: 'LOGOUT'
+  }
+}
+
+export const addFavorite = (favorite) => {
+  return {
+    type: 'ADD_FAVORITE',
+    favorite
   }
 }

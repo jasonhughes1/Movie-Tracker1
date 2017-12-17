@@ -47,8 +47,21 @@ async function fetchMovies(){
     }
   }
 
+  export const fetchFavorites = async (favorite) => {
+    try {
+      const fetchFavorites = await fetch('/api/users/favorites/new', {
+        method: 'POST',
+        body: JSON.stringify(favorite),
+        headers: {'Content-Type': 'application/json'}
+      })
+      const favoriteData = await fetchFavorites.json();
+      return favoriteData
+    } catch (err) {
+      return false;
+    }
+  }
+
+
+
   
-
-
-
-  export default { fetchMovies, userLogin};
+  export default { fetchMovies, userLogin, userRegister, fetchFavorites };
