@@ -68,6 +68,7 @@ async logInNewUser(newUserData) {
   render() {
     return (
       <div className = 'register-container'>
+        <h2 className = 'welcome-text'>Get Started!</h2>
         <form
           onSubmit={(event) => this.handleRegister(event)}>
           {this.state.passwordError &&
@@ -75,26 +76,32 @@ async logInNewUser(newUserData) {
           {this.state.signUpError &&
             <h2>Email Already Exists, please login or use a different email!</h2>}
           <input
+            className = 'name'
             type='text'
             placeholder='Name'
             onChange={(event) => this.handleChange('name', event)}
           />
           <input
+            className = 'email'
             type='email'
             placeholder='Email'
             onChange={(event) => this.handleChange('email', event)}
           />
           <input
+            className = 'password'
             type='password'
             placeholder='Password'
             onChange={(event) => this.handleChange('password', event)}
           />
           <input
+            className = 'name'
             type='password'
             placeholder='Please Retype Password'
             onChange={(event) => this.handleChange('retypePassword', event)}
           />
-          <button type='submit'
+          <button
+            className = 'submit-button'
+            type='submit'
             disabled={this.state.disabled}>
               Register
           </button>

@@ -1,4 +1,45 @@
+.welcome-text{
+  font-size: 32px;
+  margin-top: 0;
+  font-weight: 100;
+  color: #676767;
+}
+
 .register-container{
-  margin-top: 300px;
-  background: green;
+  background-color: #f7f7f7;
+  height: 100vh;
+  width: 70%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  align-content: space-around;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.name, .email, .password {
+  width: 91%;
+  background: #E2E2E2;
+  margin-bottom: 23px;
+  height: 35px;
+  font-size: 17px;
+  border: none;
+}
+
+.submit-button{
+  margin-top: 25px;
+  width: 92%;
+  height: 40px;
+  font-size: 18px;
+  color: white;
+  background: #5600ff;
+  border: none;
+  font-weight: 100;
+    &:hover {
+      cursor: pointer;
+    }
+    &:focus{
+    outline: 0 !important;
+  }
 }
