@@ -38,7 +38,7 @@ logIn = async (cred) => {
   render() {
     return(
       <div className = 'login'>
-        <h2>LOGIN PAGE</h2>
+        <h2 className='welcome-text'>Welcome Back!</h2>
         <input
           className = 'email'
           placeholder = 'email'
