@@ -13,8 +13,8 @@ class Login extends Component {
   constructor() {
     super()
     this.state = {
-      email: 'jason@email.com',
-      password: 'password',
+      email: '',
+      password: '',
       loginError: false
     }
   }
@@ -39,15 +39,15 @@ logIn = async (cred) => {
     return(
       <div className = 'login'>
         <h2 className='welcome-text'>Welcome Back!</h2>
+        <p>email</p>
         <input
           className = 'email'
-          placeholder = 'email'
                  value={this.state.email}
               onChange={(event) => this.handleChange('email', event)}
         />
+        <p>password</p>
         <input
           className = 'password'
-          placeholder = 'password'
                  value={this.state.passord}
               onChange={(event) => this.handleChange('password', event)}
         />
