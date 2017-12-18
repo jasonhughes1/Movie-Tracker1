@@ -12,8 +12,14 @@
     display: flex;
     flex-wrap: wrap;
     margin-top: -150px;
+    position: relative;
 }
 
-button:hover {
-  cursor: pointer;
+
+button{
+    &:hover {
+    cursor: pointer;
+  } &:focus{
+    outline: 0 !important;
+  }
 }
