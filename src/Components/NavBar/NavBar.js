@@ -39,10 +39,12 @@ render() {
    let mappedName = this.props.user.map(name => name.data.name)
   return (
     <div className='nav-bar'>
-      <h4 className = 'welcome'>Welcome, <span>{mappedName}</span></h4>
+      <p className = 'welcome'>Welcome, <span className = 'user'>{mappedName}</span></p>
       <NavLink className='nav' to='/'>Movies</NavLink>
-      <NavLink className='fav' to='/favorites'>Favorites</NavLink>
-      <button onClick = {() => this.logoutRedirect()}>log out</button>
+      <NavLink className='nav' to='/favorites'>Favorites</NavLink>
+      <button
+        className = 'logout'
+        onClick = {() => this.logoutRedirect()}>log out</button>
     </div>
   )
  }

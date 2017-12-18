@@ -1,4 +1,16 @@
+.card-list {
+  height: 100vh;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding-top: 90px; }
+
 .card-container {
   justify-content: center;
+  display: -ms-flexbox;
   display: flex;
-  flex-wrap: wrap; }
+  flex-wrap: wrap;
+  margin-top: -150px; }
+
+button:hover {
+  cursor: pointer; }

@@ -1,9 +1,9 @@
 .card-list {
-  back
-  // display: flex;
-  // flex-wrap: wrap;
-  // justify-content: center;
-  // padding-top: 90px;
+  height: 100vh;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding-top: 90px;
 }
 
 .card-container {
@@ -11,4 +11,9 @@
     display: -ms-flexbox;
     display: flex;
     flex-wrap: wrap;
+    margin-top: -150px;
+}
+
+button:hover {
+  cursor: pointer;
 }

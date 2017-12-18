@@ -13,13 +13,31 @@
 .vote {
   display: none; }
 
-.favorite {
+.not-favorite {
+  background-image: url("../../Imagery/like.svg");
   height: 30px;
   width: 30px;
-  border: none;
   position: absolute;
-  background: black;
-  background-image: url("../../Imagery/like.svg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  float: right; }
+
+.favorite {
+  background-image: url("../../Imagery/like-active.svg");
+  height: 30px;
+  width: 30px;
+  position: absolute;
+  background-repeat: no-repeat;
+  background-size: cover;
+  float: right; }
+
+.favorite-button {
+  height: 30px;
+  margin-left: -20px;
+  width: 40px;
+  border: none;
+  background: none;
+  position: absolute;
   background-repeat: no-repeat;
   background-size: cover;
   opacity: 0.8;
