@@ -6,7 +6,6 @@ import { browserHistory } from 'react-router-dom'
 
 const Card = (props) => {
   const redirect = () => {
-  // (!props.user.id) {
       props.addToFavorites(props.movie)
     }
 
