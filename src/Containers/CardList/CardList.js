@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import Card from '../../Components/Card/Card';
+import Backdrop from '../../Components/Backdrop/Backdrop';
 import './CardList.css'
 import { addFavorite, loginSuccess, removeFavorite, setFavorites } from '../../Actions/Actions';
 import { fetchFavorites, receiveFavorites, deleteFavorites } from '../../API/helper.js';
@@ -35,7 +36,9 @@ class CardList extends Component {
   }
 
   render() {
+
     const movieCards = this.props.movies.map((movie) => {
+
      return <Card
        key = {movie.id}
        movie={movie}
@@ -49,9 +52,22 @@ class CardList extends Component {
      />
    })
 
+   let number = Math.floor(Math.random() * (20) * 1);
+   const movieBackdrop = this.props.movies.map((movie) => {
+     return movie.backdrop
+   })
+
+   const backdrop = movieBackdrop[number]
+
+
     return (
       <div className = 'card-list'>
-       {movieCards}
+        <Backdrop
+          backdrop = {backdrop}
+        />
+        <div className = 'card-container'>
+          {movieCards}
+        </div>
       </div>
     );
  }

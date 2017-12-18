@@ -20,7 +20,6 @@ const Card = (props) => {
           className = 'favorite'></button>
         <img className = 'poster' src={`https://image.tmdb.org/t/p/w500${props.poster}`} />
       </div>
-      <img className = 'backdrop' src={`https://image.tmdb.org/t/p/w500${props.backdrop}`} />
       <p className = 'vote'>{props.vote}</p>
     </div>
   )

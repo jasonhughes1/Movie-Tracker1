@@ -11,7 +11,8 @@
   width: 250px; }
 
 .backdrop {
-  display: none; }
+  width: 100%;
+  height: auto; }
 
 .vote {
   display: none; }
