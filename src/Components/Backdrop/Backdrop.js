@@ -10,6 +10,7 @@ const Backdrop = (props) => {
   return (
     // let number = await Math.floor(Math.random() * (20) * 1)
     <div className = 'backdrop-container'>
+    <div className = 'backdrop-gradient'></div>
       <img className = 'backdrop' src={`https://image.tmdb.org/t/p/w500${props.backdrop}`} />
     </div>
   )

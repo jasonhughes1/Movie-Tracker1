@@ -61,10 +61,9 @@ class CardList extends Component {
 
 
     return (
-      <div className = 'card-list'>
-        <Backdrop
-          backdrop = {backdrop}
-        />
+      <div>
+          <Backdrop
+            backdrop = {backdrop}/>
         <div className = 'card-container'>
           {movieCards}
         </div>
