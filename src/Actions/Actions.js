@@ -23,20 +23,6 @@ export const logout = () => {
   };
 };
 
-export const addFavorite = (favorite) => {
-  return {
-    type: 'ADD_FAVORITE',
-    favorite
-  };
-};
-
-export const removeFavorite = (favorite) => {
-  return {
-    type: 'REMOVE_FAVORITE',
-    favorite
-  };
-};
-
 export const setFavorites = (favorites) => {
   return {
     type: 'SET_FAVORITES',

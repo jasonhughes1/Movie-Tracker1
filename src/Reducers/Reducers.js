@@ -20,23 +20,10 @@ export const user = (store = [], action) => {
   }
 };
 
-export const newUser = (store = [], action) => {
-  switch (action.type) {
-  case 'REGISTER_ACTION':
-    return Object.assign({}, action.newUser);
-  default:
-    return store;
-  }
-};
-
 export const favorite = (store = [], action) => {
   switch (action.type) {
-  case 'ADD_FAVORITE':
-    return [...store, action.favorite];
   case 'SET_FAVORITES':
     return action.favorites;
-  case 'REMOVE_FAVORITE':
-    return [...action, action.favorite];
   case 'CLEAR_FAVORITES':
     return [];
   default:
