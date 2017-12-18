@@ -23,6 +23,7 @@ class CardList extends Component {
      return favorite.title === movie.title
    })
    if(!movieFoundInFavs) {
+     this.toggleFavorite(movie)
      await fetchFavorites(movie, this.props.user[0].data.id);
      const newFavs = await receiveFavorites(this.props.user[0].data.id);
      console.log(newFavs);
@@ -34,6 +35,10 @@ class CardList extends Component {
      return this.props.setFavorites(newFavs.data)
    }
   }
+
+  toggleFavorite = (movie) => {
+  movie.isFavorite = !movie.isFavorite;
+}
 
   render() {
 
@@ -49,6 +54,7 @@ class CardList extends Component {
        backdrop = {movie.backdrop}
        addToFavorites={this.addFavoriteMovie}
        user={this.props.user}
+       isFavorite={movie.isFavorite}
      />
    })
 
@@ -62,8 +68,8 @@ class CardList extends Component {
 
     return (
       <div>
-          <Backdrop
-            backdrop = {backdrop}/>
+        <Backdrop
+          backdrop = {backdrop}/>
         <div className = 'card-container'>
           {movieCards}
         </div>

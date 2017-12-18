@@ -1,4 +1,24 @@
 .backdrop {
   margin-top: 80px;
   width: 100%;
-  height: auto; }
+  height: auto;
+  opacity: 0.1; }
+
+.backdrop-container {
+  position: relative; }
+
+h3 {
+  font-family: 'Comfortaa', cursive;
+  font-weight: 100;
+  font-size: 92px;
+  margin: 0;
+  color: #817df1;
+  position: absolute;
+  text-align: center;
+  top: 35%;
+  width: 100%;
+  position: absolute; }
+
+span {
+  font-family: 'Comfortaa', cursive;
+  color: white; }

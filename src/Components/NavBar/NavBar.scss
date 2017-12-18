@@ -10,9 +10,10 @@
 }
 
 .welcome{
-  font-weight: 100;
+  // font-weight: 100;
+  font-family: 'Comfortaa', cursive;
   display: block;
-  color: #91afdc;
+  color: #817df1;
   margin: 0;
 }
 
@@ -24,12 +25,28 @@
   }
 }
 
+.logout {
+  font-weight: 100;
+  border: none;
+  background: #817df1;
+  color: #ffffff;
+  height: 22px;
+  width: 110px;
+  border-radius: 100px;
+}
 
 .logo{
-  color: #5600ff;
+  font-family: 'Comfortaa', cursive;
+  color: #817df1;
   margin: 0px;
 }
 
-.logo-two{
+.logo-two {
+  font-family: 'Comfortaa', cursive;
   color: white
+}
+
+.user {
+  font-family: 'Comfortaa', cursive;
+  color: #817df1;
 }

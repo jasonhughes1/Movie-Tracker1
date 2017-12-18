@@ -6,6 +6,7 @@ import PropTypes from 'prop-types';
 
 
 const Card = (props) => {
+  const favortieClass = !props.isFavorite ? 'not-favorite' : 'favorite';
 
   const redirect = () => {
       props.addToFavorites(props.movie)
@@ -16,8 +17,10 @@ const Card = (props) => {
       <h1 className = 'title'>{props.title}</h1>
       <p className = 'overview'>{props.overview}</p>
       <div className = 'image-container'>
-        <button onClick={() => redirect()}
-          className = 'favorite'></button>
+        <div className = { favortieClass }>
+          <button onClick={() => redirect()}
+          className = 'favorite-button'></button>
+        </div>
         <img className = 'poster' src={`https://image.tmdb.org/t/p/w500${props.poster}`} />
       </div>
       <p className = 'vote'>{props.vote}</p>
