@@ -100,14 +100,14 @@ export const deleteFavorites = async (movie, userID) => {
 
   try {
     await fetch(`/api/users/${userID}/favorites/${newId}`,
-        {
-          method: 'DELETE',
-          headers: {'Content-Type': 'application/json'},
-          body: JSON.stringify({
-            movie_id: movie_id,
-            user_id: userID
-          })
-        });
+      {
+        method: 'DELETE',
+        headers: {'Content-Type': 'application/json'},
+        body: JSON.stringify({
+          movie_id: movie_id,
+          user_id: userID
+        })
+      });
     return receiveFavorites(userID);
   } catch (error) {
     return false;
