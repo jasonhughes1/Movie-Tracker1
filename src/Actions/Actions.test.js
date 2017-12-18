@@ -4,10 +4,10 @@ import * as actions from './Actions';
 describe('all actions', () => {
   it('has a type of ADD_MOVIES', () => {
     const movie = {
-      title: "Justice League", 
-      poster: "/9.jpg", 
-      vote: 6.6, 
-      overview: "Fueled by.", 
+      title: "Justice League",
+      poster: "/9.jpg",
+      vote: 6.6,
+      overview: "Fueled by.",
       backdrop: "/o5B.jpg"
     };
     const expected = {
@@ -40,4 +40,54 @@ it('has a type of REGISTER_ACTION', () => {
 
 it('has a type of LOGOUT', () => {
   expect(actions.logout()).toBeDefined();
+});
+
+it('has a type of ADD_FAVORITE', () => {
+  const favorite = {
+    title: "Justice League",
+    poster: "/9.jpg",
+    vote: 6.6,
+    overview: "Fueled by.",
+    backdrop: "/o5B.jpg"
+  };
+  const expected = {
+    type: 'ADD_FAVORITE',
+    favorite
+  };
+  expect(actions.addFavorite(favorite)).toEqual(expected)
+})
+
+
+it('has a type of REMOVE_FAVORITE', () => {
+  const favorite = {
+    title: "Justice League",
+    poster: "/9.jpg",
+    vote: 6.6,
+    overview: "Fueled by.",
+    backdrop: "/o5B.jpg"
+  };
+  const expected = {
+    type: 'REMOVE_FAVORITE',
+    favorite
+  };
+  expect(actions.removeFavorite(favorite)).toEqual(expected)
+})
+
+it('has a type of SET_FAVORITES', () => {
+  const favorites = {
+    title: "Justice League",
+    poster: "/9.jpg",
+    vote: 6.6,
+    overview: "Fueled by.",
+    backdrop: "/o5B.jpg"
+  };
+  const expected = {
+    type: 'SET_FAVORITES',
+    favorites
+  };
+  expect(actions.setFavorites(favorites)).toEqual(expected)
+})
+
+it('has a type of CLEAR_FAVORITES', () => {
+  expect(actions.clearFavorites()).toBeDefined();
 });
