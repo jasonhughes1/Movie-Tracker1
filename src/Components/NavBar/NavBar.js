@@ -1,10 +1,12 @@
 import React, { Component } from 'react';
 import { NavLink } from 'react-router-dom';
 import { connect } from 'react-redux';
-import { logout } from '../../Actions/Actions';
+import { logout, clearFavorites } from '../../Actions/Actions';
 import './NavBar.css'
 import helper from '../../API/helper.js';
 import { addMovies } from '../../Actions/Actions';
+import PropTypes from 'prop-types';
+
 const { fetchMovies } = helper;
 
 class NavBar extends Component {
@@ -13,6 +15,12 @@ class NavBar extends Component {
  async componentDidMount() {
     const getMovies = await fetchMovies();
     const movieData = this.props.addMovieFunction(getMovies);
+}
+
+logoutRedirect = (props) => {
+  this.props.logout()
+  this.props.clearFavorites();
+  this.props.history.push('/login');
 }
 
 render() {
@@ -33,7 +41,7 @@ render() {
       <h4 className = 'welcome'>Welcome, <span>{mappedName}</span></h4>
       <NavLink className='nav' to='/'>Movies</NavLink>
       <NavLink className='fav' to='/favorites'>Favorites</NavLink>
-      <button onClick = {this.props.logout}>log out</button>
+      <button onClick = {() => this.logoutRedirect()}>log out</button>
     </div>
   )
  }
@@ -54,8 +62,21 @@ export const mapDispatchToProps = (dispatch) => {
     },
      addMovieFunction: (getMovies) => {
     dispatch(addMovies(getMovies));
-   }
+  },
+    clearFavorites: () => {
+      dispatch(clearFavorites());
+    }
   }
+}
+
+NavBar.propTypes = {
+addMovieFunction: PropTypes.func,
+clearFavorites: PropTypes.func,
+history: PropTypes.object,
+location: PropTypes.object,
+logout: PropTypes.func,
+match: PropTypes.object,
+user: PropTypes.array
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(NavBar)
