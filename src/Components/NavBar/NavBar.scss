@@ -18,7 +18,12 @@
 
 .nav {
   color: white;
+  text-decoration-line: none;
+  &:focus {
+    color: #817df1;
+  }
 }
+
 
 .logo{
   color: #5600ff;

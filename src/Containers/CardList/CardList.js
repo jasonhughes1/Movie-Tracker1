@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import Card from '../../Components/Card/Card';
+import Backdrop from '../../Components/Backdrop/Backdrop';
 import './CardList.css'
 import { addFavorite, loginSuccess } from '../../Actions/Actions';
 import { fetchFavorites } from '../../API/helper.js';
@@ -11,7 +12,7 @@ class CardList extends Component {
 
 addFavoriteMovie = (movie) => {
   if(this.props.user[0]) {
-   this.checkFavorites(movie);   
+   this.checkFavorites(movie);
   } else {
     this.props.history.push('/login');
   }
@@ -23,7 +24,7 @@ addFavoriteMovie = (movie) => {
   })
   if(!movieFoundInFavs) {
     await fetchFavorites(movie, this.props.user[0].data.id);
-    this.props.addFavorite(movie); 
+    this.props.addFavorite(movie);
   } else {
     alert('This movie is already in your favorites!')
   }
@@ -31,7 +32,9 @@ addFavoriteMovie = (movie) => {
 
 
   render() {
+
     const movieCards = this.props.movies.map((movie) => {
+
      return <Card
        key = {movie.id}
        movie={movie}
@@ -45,9 +48,22 @@ addFavoriteMovie = (movie) => {
      />
    })
 
+   let number = Math.floor(Math.random() * (20) * 1);
+   const movieBackdrop = this.props.movies.map((movie) => {
+     return movie.backdrop
+   })
+
+   const backdrop = movieBackdrop[number]
+
+
     return (
       <div className = 'card-list'>
-       {movieCards}
+        <Backdrop
+          backdrop = {backdrop}
+        />
+        <div className = 'card-container'>
+          {movieCards}
+        </div>
       </div>
     );
  }
