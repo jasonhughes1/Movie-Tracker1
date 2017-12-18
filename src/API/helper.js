@@ -10,13 +10,13 @@ async function fetchMovies(){
      const movies = await movie.map( movie => {
       let title = movie.title;
       let overview = movie.overview;
-      let poster = movie.poster_path;
+      let poster_path = movie.poster_path;
       let vote = movie.vote_average;
       let backdrop = movie.backdrop_path;
       let movieid = movie.id;
       let release_date= movie.release_date;
 
-      return {movieid, release_date, title, poster, vote, overview, backdrop, favorite: false}
+      return {movieid, release_date, title, poster_path, vote, overview, backdrop, favorite: false}
     });
 
      return Promise.all(movies)
@@ -52,7 +52,6 @@ async function fetchMovies(){
 
   export const fetchFavorites = async (movie, userid) => {
     try {
-      console.log('movie', movie);
       const fetchFavorites = await
       fetch('/api/users/favorites/new', {
         method: 'POST',
@@ -60,7 +59,7 @@ async function fetchMovies(){
           movie_id: movie.movieid,
           user_id: userid,
           title: movie.title,
-          poster_path: movie.poster,
+          poster_path: movie.poster_path,
           release_date: movie.release_date,
           vote_average: movie.vote,
           overview: movie.overview
@@ -74,7 +73,39 @@ async function fetchMovies(){
     }
   }
 
+  export const receiveFavorites = async (id) => {
+    try {
+      const receiveFavorites = await
+      fetch(`/api/users/${id}/favorites`)
+      const receiveAll = await receiveFavorites.json();
+      return receiveAll;
+    } catch (error) {
+      return false;
+    }
+  }
+
+  export const deleteFavorites = async (movie, userID) => {
+    let {movie_id, movieid} = movie
+    const newId = movieid ? movieid : movie_id;
+    console.log(newId);
+    console.log(movie);
+    try {
+      const deleteFavs = await
+      fetch(`/api/users/${userID}/favorites/${newId}`,
+      {
+        method: 'DELETE',
+        headers: {'Content-Type': 'application/json'},
+        body: JSON.stringify({
+          movie_id: movie_id,
+           user_id: userID
+         })
+      })
+      return receiveFavorites(userID)
+    } catch (error) {
+      return false;
+    }
+  }    
 
 
 
-  export default { fetchMovies, userLogin, userRegister, fetchFavorites };
+  export default { fetchMovies, userLogin, userRegister, fetchFavorites, receiveFavorites, deleteFavorites };

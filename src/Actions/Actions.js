@@ -29,3 +29,23 @@ export const addFavorite = (favorite) => {
     favorite
   }
 }
+
+export const removeFavorite = (favorite) => {
+  return {
+    type: 'REMOVE_FAVORITE',
+    favorite
+  }
+}
+
+export const setFavorites = (favorites) => {
+  return {
+    type: 'SET_FAVORITES',
+    favorites
+  }
+}
+
+export const clearFavorites = () => {
+  return {
+    type: 'CLEAR_FAVORITES'
+  }
+}

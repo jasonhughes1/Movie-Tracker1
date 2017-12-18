@@ -1,11 +1,11 @@
 import React, {Component} from 'react';
 import { connect } from 'react-redux';
-import { loginSuccess } from '../../Actions/Actions';
+import { loginSuccess, setFavorites } from '../../Actions/Actions';
 import helper from '../../API/helper.js';
 import { browserHistory } from 'react-router-dom'
 import './Login.css'
 
-const { userLogin } = helper;
+const { userLogin, receiveFavorites } = helper;
 
 
 
@@ -28,6 +28,9 @@ logIn = async (cred) => {
 
   if (loggedIn) {
     this.props.loginSuccess(loggedIn);
+    const favorites = await receiveFavorites(this.props.user['0'].data.id);
+    console.log(favorites.data)
+    this.props.setFavorites(favorites.data);
     this.props.history.push('/')
   } else {
     alert('invalid login');
@@ -61,7 +64,8 @@ logIn = async (cred) => {
 
 const mapStateToProps = (store) => {
   return {
-    login: store.login
+    login: store.login,
+    user: store.user
   }
 }
 
@@ -69,6 +73,9 @@ const mapDispatchToProps = (dispatch) => {
   return {
     loginSuccess: (email, password) => {
       dispatch(loginSuccess(email, password))
+    },
+    setFavorites: (userId) => {
+      dispatch(setFavorites(userId))
     }
   }
 }
