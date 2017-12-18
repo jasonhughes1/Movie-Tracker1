@@ -13,8 +13,6 @@ export const user = (store = [], action) => {
     return [...store, action.user]
     case 'LOGIN_SUCCESS':
     return [...store, action.user];
-    // case 'LOGIN_FAILURE':
-    // return [...store, action.user];
     case 'LOGOUT':
     return {};
     default:
@@ -34,7 +32,13 @@ export const newUser = (store = [], action) => {
 export const favorite = (store = [], action) => {
   switch(action.type) {
     case 'ADD_FAVORITE':
-      return [...store, action.favorite]
+      return [...store, action.favorite];
+    case 'SET_FAVORITES':
+      return action.favorites;
+    case 'REMOVE_FAVORITE':
+      return [...action, action.favorite];
+    case 'CLEAR_FAVORITES':
+      return [];
     default:
       return store;
   }
