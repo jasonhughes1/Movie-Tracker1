@@ -10,7 +10,11 @@
   display: -ms-flexbox;
   display: flex;
   flex-wrap: wrap;
-  margin-top: -150px; }
+  margin-top: -150px;
+  position: relative; }
 
 button:hover {
   cursor: pointer; }
+
+button:focus {
+  outline: 0 !important; }
