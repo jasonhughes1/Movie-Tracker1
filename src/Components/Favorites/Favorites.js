@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import Card from '../../Components/Card/Card';
 import CardList from '../../Containers/CardList/CardList'
 import { fetchFavorites, deleteFavorites, receiveFavorites } from '../../API/helper.js';
-import { addFavorite, loginSuccess, setFavorites} from '../../Actions/Actions';
+import { setFavorites } from '../../Actions/Actions';
 
 class Favorites extends Component {
 
@@ -38,7 +38,6 @@ class Favorites extends Component {
 
   render() {
     const favoriteMovies = this.props.favorites.map((movie) => {
-      console.log(movie);
      return <Card
        key = {movie.id}
        movie={movie}

@@ -15,7 +15,6 @@ class NavBar extends Component {
  async componentDidMount() {
     const getMovies = await fetchMovies();
     const movieData = this.props.addMovieFunction(getMovies);
-    console.log(getMovies)
 }
 
 logoutRedirect = (props) => {

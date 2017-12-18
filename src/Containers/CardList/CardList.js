@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import Card from '../../Components/Card/Card';
 import Backdrop from '../../Components/Backdrop/Backdrop';
 import './CardList.css'
-import { addFavorite, loginSuccess, removeFavorite, setFavorites } from '../../Actions/Actions';
+import { setFavorites } from '../../Actions/Actions';
 import { fetchFavorites, receiveFavorites, deleteFavorites } from '../../API/helper.js';
 import PropTypes from 'prop-types';
 
@@ -26,12 +26,10 @@ class CardList extends Component {
      this.toggleFavorite(movie)
      await fetchFavorites(movie, this.props.user[0].data.id);
      const newFavs = await receiveFavorites(this.props.user[0].data.id);
-     console.log(newFavs);
      return this.props.setFavorites(newFavs.data);
    } else {
      const deleteFavs = await deleteFavorites(movie, this.props.user[0].data.id )
      const newFavs = await receiveFavorites(this.props.user[0].data.id);
-     console.log(newFavs);
      return this.props.setFavorites(newFavs.data)
    }
   }
@@ -41,7 +39,7 @@ class CardList extends Component {
 }
 
   render() {
-    
+
     const movieCards = this.props.movies.map((movie) => {
 
      return <Card
@@ -88,15 +86,6 @@ const mapStateToProps = (store) => {
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    addFavorite: (favorite) => {
-      dispatch(addFavorite(favorite));
-    },
-    removeFavorite: (favorite) => {
-      dispatch(removeFavorite(favorite));
-    },
-    loginSuccess: (user) => {
-      dispatch(loginSuccess(user))
-    },
     setFavorites: (newFavorites) => {
       dispatch(setFavorites(newFavorites));
     }
@@ -104,14 +93,11 @@ const mapDispatchToProps = (dispatch) => {
 }
 
 CardList.propTypes = {
-addFavorite: PropTypes.func,
 favorites: PropTypes.array,
 history: PropTypes.object,
 location: PropTypes.object,
-loginSuccess: PropTypes.func,
 match: PropTypes.object,
 movies: PropTypes.array,
-removeFavorite: PropTypes.func,
 setFavorites: PropTypes.func,
 user: PropTypes.array,
 }

@@ -1,12 +1,11 @@
 import { combineReducers } from 'redux';
-import { addMoviesReducer, user, newUser, favorite } from './Reducers';
+import { addMoviesReducer, user, favorite } from './Reducers';
 
 
 
 const rootReducer = combineReducers({
   movies: addMoviesReducer,
   user,
-  newUser,
   favorite
 });
 
