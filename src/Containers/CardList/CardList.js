@@ -4,6 +4,7 @@ import Card from '../../Components/Card/Card';
 import './CardList.css'
 import { addFavorite, loginSuccess, removeFavorite, setFavorites } from '../../Actions/Actions';
 import { fetchFavorites, receiveFavorites, deleteFavorites } from '../../API/helper.js';
+import PropTypes from 'prop-types';
 
 
 class CardList extends Component {
@@ -32,19 +33,6 @@ class CardList extends Component {
      return this.props.setFavorites(newFavs.data)
    }
   }
-
-  // checkFavorites = async (movie) => {
-  //  const movieFoundInFavs = this.props.favorites.find(favorite => {
-  //    return favorite.title === movie.title
-  //  })
-  //  if(!movieFoundInFavs) {
-  //    await fetchFavorites(movie, this.props.user[0].data.id);
-  //    return this.props.addFavorite(movie);
-  //  } else {
-  //    const newFavs = await deleteFavorites(movie, this.props.user[0].data.id )
-  //    return this.props.setFavorites(newFavs.data)
-  //  }
-  // }
 
   render() {
     const movieCards = this.props.movies.map((movie) => {
@@ -92,6 +80,19 @@ const mapDispatchToProps = (dispatch) => {
       dispatch(setFavorites(newFavorites));
     }
   }
+}
+
+CardList.propTypes = {
+addFavorite: PropTypes.func,
+favorites: PropTypes.array,
+history: PropTypes.object,
+location: PropTypes.object,
+loginSuccess: PropTypes.func,
+match: PropTypes.object,
+movies: PropTypes.array,
+removeFavorite: PropTypes.func,
+setFavorites: PropTypes.func,
+user: PropTypes.array,
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(CardList);

@@ -5,6 +5,7 @@ import { logout, clearFavorites } from '../../Actions/Actions';
 import './NavBar.css'
 import helper from '../../API/helper.js';
 import { addMovies } from '../../Actions/Actions';
+import PropTypes from 'prop-types';
 
 const { fetchMovies } = helper;
 
@@ -66,6 +67,16 @@ export const mapDispatchToProps = (dispatch) => {
       dispatch(clearFavorites());
     }
   }
+}
+
+NavBar.propTypes = {
+addMovieFunction: PropTypes.func,
+clearFavorites: PropTypes.func,
+history: PropTypes.object,
+location: PropTypes.object,
+logout: PropTypes.func,
+match: PropTypes.object,
+user: PropTypes.array
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(NavBar)
