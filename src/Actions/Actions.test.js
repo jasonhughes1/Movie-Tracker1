@@ -54,8 +54,8 @@ it('has a type of ADD_FAVORITE', () => {
     type: 'ADD_FAVORITE',
     favorite
   };
-  expect(actions.addFavorite(favorite)).toEqual(expected)
-})
+  expect(actions.addFavorite(favorite)).toEqual(expected);
+});
 
 
 it('has a type of REMOVE_FAVORITE', () => {
@@ -70,8 +70,8 @@ it('has a type of REMOVE_FAVORITE', () => {
     type: 'REMOVE_FAVORITE',
     favorite
   };
-  expect(actions.removeFavorite(favorite)).toEqual(expected)
-})
+  expect(actions.removeFavorite(favorite)).toEqual(expected);
+});
 
 it('has a type of SET_FAVORITES', () => {
   const favorites = {
@@ -85,8 +85,8 @@ it('has a type of SET_FAVORITES', () => {
     type: 'SET_FAVORITES',
     favorites
   };
-  expect(actions.setFavorites(favorites)).toEqual(expected)
-})
+  expect(actions.setFavorites(favorites)).toEqual(expected);
+});
 
 it('has a type of CLEAR_FAVORITES', () => {
   expect(actions.clearFavorites()).toBeDefined();
