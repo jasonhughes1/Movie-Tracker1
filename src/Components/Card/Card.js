@@ -1,15 +1,15 @@
 import React from 'react';
 import './Card.css';
 import { browserHistory } from 'react-router-dom'
+import PropTypes from 'prop-types';
 
 
 
 const Card = (props) => {
+
   const redirect = () => {
-  // (!props.user.id) {
       props.addToFavorites(props.movie)
     }
-
 
   return (
     <div className = 'card'>
@@ -24,6 +24,17 @@ const Card = (props) => {
       <p className = 'vote'>{props.vote}</p>
     </div>
   )
+}
+
+Card.propTypes = {
+addToFavorites: PropTypes.func,
+backdrop: PropTypes.string,
+movie: PropTypes.object,
+overview: PropTypes.string,
+poster: PropTypes.string,
+title: PropTypes.string,
+user: PropTypes.array,
+vote: PropTypes.numb
 }
 
 export default Card;
