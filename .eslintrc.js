@@ -14,7 +14,6 @@ module.exports = {
     "es6": true,
     "jest": true
   },
-  // Having a problem with one of these rules? Learn more about it here: https://eslint.org/docs/rules/
   "rules": {
     "eqeqeq": ["error", "always"],
     "getter-return": ["error", { "allowImplicit": true }],
@@ -24,7 +23,6 @@ module.exports = {
     "array-bracket-spacing": ["error", "never"],
     "block-spacing": ["error", "always"],
     "brace-style": ["error", "1tbs", { "allowSingleLine": true }],
-    "camelcase": "warn",
     "comma-dangle": ["error", "never"],
     "comma-spacing": ["error", { "before": false, "after": true }],
     "comma-style": ["error", "last"],
