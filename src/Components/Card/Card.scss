@@ -1,10 +1,18 @@
 .card {
   margin: 5px;
+  background: white;
+  height: 370px;
 }
 
 .overview {
   display: none;
+  width: 240px;
+  margin: 0;
 }
+
+// .overview:hover {
+//   display: inline-block;
+// }
 
 .title {
   display: none;
@@ -13,6 +21,10 @@
 .poster {
   width: 250px;
 }
+
+// .poster:hover{
+//   opacity: 0;
+// }
 
 .vote {
   display: none;
@@ -28,7 +40,6 @@
   position: absolute;
   background-repeat: no-repeat;
   background-size: cover;
-  // background: green;
   float: right;
 }
 
@@ -43,14 +54,11 @@
 }
 
 .favorite-button {
-  height: 30px;
+  height: 50px;
   margin-left: -20px;
-  width: 40px;
+  width: 50px;
   border: none;
   background: none;
   position: absolute;
-  background-repeat: no-repeat;
-  background-size: cover;
-  opacity: 0.8;
   float: right;
 }
