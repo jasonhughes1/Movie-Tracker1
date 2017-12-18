@@ -24,6 +24,8 @@ logoutRedirect = (props) => {
 }
 
 render() {
+  const favoriteLength = this.props.favorites.length;
+
   if(Object.keys(this.props.user).length === 0) {
   return (
     <div className='nav-bar'>
@@ -40,20 +42,20 @@ render() {
     <div className='nav-bar'>
       <p className = 'welcome'>Welcome, <span className = 'user'>{mappedName}</span></p>
       <NavLink className='nav' to='/'>Movies</NavLink>
-      <NavLink className='nav' to='/favorites'>Favorites</NavLink>
+      <NavLink className='nav' to='/favorites'><span>{favoriteLength}</span> Favorited</NavLink>
       <button
         className = 'logout'
         onClick = {() => this.logoutRedirect()}>log out</button>
     </div>
-  )
- }
-}
+    )}
+  }
 }
 
 
 export const mapStateToProps = (store) => {
   return {
-    user: store.user
+    user: store.user,
+    favorites: store.favorite
   }
 }
 

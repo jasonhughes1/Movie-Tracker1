@@ -6,7 +6,7 @@ import PropTypes from 'prop-types';
 
 
 const Card = (props) => {
-  const favortieClass = !props.isFavorite ? 'not-favorite' : 'favorite';
+  const favortieClass = !props.isFavorite ? 'not-favorite' : 'not-favorite';
 
   const redirect = () => {
       props.addToFavorites(props.movie)

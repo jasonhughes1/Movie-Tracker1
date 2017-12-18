@@ -41,7 +41,7 @@ class CardList extends Component {
 }
 
   render() {
-
+    
     const movieCards = this.props.movies.map((movie) => {
 
      return <Card
