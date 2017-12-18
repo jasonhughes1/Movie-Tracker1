@@ -27,19 +27,19 @@ ShallowWrapper {
         <div
           className="image-container"
         >
-          <button
-            className="favorite"
-            onClick={[Function]}
-          />
+          <div
+            className="not-favorite"
+          >
+            <button
+              className="favorite-button"
+              onClick={[Function]}
+            />
+          </div>
           <img
             className="poster"
             src="https://image.tmdb.org/t/p/w500undefined"
           />
         </div>,
-        <img
-          className="backdrop"
-          src="https://image.tmdb.org/t/p/w500undefined"
-        />,
         <p
           className="vote"
         />,
@@ -78,10 +78,14 @@ ShallowWrapper {
         "nodeType": "host",
         "props": Object {
           "children": Array [
-            <button
-              className="favorite"
-              onClick={[Function]}
-            />,
+            <div
+              className="not-favorite"
+            >
+              <button
+                className="favorite-button"
+                onClick={[Function]}
+              />
+            </div>,
             <img
               className="poster"
               src="https://image.tmdb.org/t/p/w500undefined"
@@ -96,12 +100,26 @@ ShallowWrapper {
             "key": undefined,
             "nodeType": "host",
             "props": Object {
-              "className": "favorite",
-              "onClick": [Function],
+              "children": <button
+                className="favorite-button"
+                onClick={[Function]}
+              />,
+              "className": "not-favorite",
             },
             "ref": null,
-            "rendered": null,
-            "type": "button",
+            "rendered": Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "className": "favorite-button",
+                "onClick": [Function],
+              },
+              "ref": null,
+              "rendered": null,
+              "type": "button",
+            },
+            "type": "div",
           },
           Object {
             "instance": null,
@@ -117,18 +135,6 @@ ShallowWrapper {
           },
         ],
         "type": "div",
-      },
-      Object {
-        "instance": null,
-        "key": undefined,
-        "nodeType": "host",
-        "props": Object {
-          "className": "backdrop",
-          "src": "https://image.tmdb.org/t/p/w500undefined",
-        },
-        "ref": null,
-        "rendered": null,
-        "type": "img",
       },
       Object {
         "instance": null,
@@ -161,19 +167,19 @@ ShallowWrapper {
           <div
             className="image-container"
           >
-            <button
-              className="favorite"
-              onClick={[Function]}
-            />
+            <div
+              className="not-favorite"
+            >
+              <button
+                className="favorite-button"
+                onClick={[Function]}
+              />
+            </div>
             <img
               className="poster"
               src="https://image.tmdb.org/t/p/w500undefined"
             />
           </div>,
-          <img
-            className="backdrop"
-            src="https://image.tmdb.org/t/p/w500undefined"
-          />,
           <p
             className="vote"
           />,
@@ -212,10 +218,14 @@ ShallowWrapper {
           "nodeType": "host",
           "props": Object {
             "children": Array [
-              <button
-                className="favorite"
-                onClick={[Function]}
-              />,
+              <div
+                className="not-favorite"
+              >
+                <button
+                  className="favorite-button"
+                  onClick={[Function]}
+                />
+              </div>,
               <img
                 className="poster"
                 src="https://image.tmdb.org/t/p/w500undefined"
@@ -230,12 +240,26 @@ ShallowWrapper {
               "key": undefined,
               "nodeType": "host",
               "props": Object {
-                "className": "favorite",
-                "onClick": [Function],
+                "children": <button
+                  className="favorite-button"
+                  onClick={[Function]}
+                />,
+                "className": "not-favorite",
               },
               "ref": null,
-              "rendered": null,
-              "type": "button",
+              "rendered": Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "host",
+                "props": Object {
+                  "className": "favorite-button",
+                  "onClick": [Function],
+                },
+                "ref": null,
+                "rendered": null,
+                "type": "button",
+              },
+              "type": "div",
             },
             Object {
               "instance": null,
@@ -251,18 +275,6 @@ ShallowWrapper {
             },
           ],
           "type": "div",
-        },
-        Object {
-          "instance": null,
-          "key": undefined,
-          "nodeType": "host",
-          "props": Object {
-            "className": "backdrop",
-            "src": "https://image.tmdb.org/t/p/w500undefined",
-          },
-          "ref": null,
-          "rendered": null,
-          "type": "img",
         },
         Object {
           "instance": null,

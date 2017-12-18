@@ -1,0 +1,155 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Backdrop Test should match snapshot 1`] = `
+ShallowWrapper {
+  "length": 1,
+  Symbol(enzyme.__root__): [Circular],
+  Symbol(enzyme.__unrendered__): <Backdrop />,
+  Symbol(enzyme.__renderer__): Object {
+    "batchedUpdates": [Function],
+    "getNode": [Function],
+    "render": [Function],
+    "simulateEvent": [Function],
+    "unmount": [Function],
+  },
+  Symbol(enzyme.__node__): Object {
+    "instance": null,
+    "key": undefined,
+    "nodeType": "host",
+    "props": Object {
+      "children": Array [
+        <h3>
+          MOVIE
+          <span>
+            TRACKER
+          </span>
+        </h3>,
+        <img
+          className="backdrop"
+          src="https://image.tmdb.org/t/p/w500undefined"
+        />,
+      ],
+      "className": "backdrop-container",
+    },
+    "ref": null,
+    "rendered": Array [
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": Array [
+            "MOVIE",
+            <span>
+              TRACKER
+            </span>,
+          ],
+        },
+        "ref": null,
+        "rendered": Array [
+          "MOVIE",
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": "TRACKER",
+            },
+            "ref": null,
+            "rendered": "TRACKER",
+            "type": "span",
+          },
+        ],
+        "type": "h3",
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "className": "backdrop",
+          "src": "https://image.tmdb.org/t/p/w500undefined",
+        },
+        "ref": null,
+        "rendered": null,
+        "type": "img",
+      },
+    ],
+    "type": "div",
+  },
+  Symbol(enzyme.__nodes__): Array [
+    Object {
+      "instance": null,
+      "key": undefined,
+      "nodeType": "host",
+      "props": Object {
+        "children": Array [
+          <h3>
+            MOVIE
+            <span>
+              TRACKER
+            </span>
+          </h3>,
+          <img
+            className="backdrop"
+            src="https://image.tmdb.org/t/p/w500undefined"
+          />,
+        ],
+        "className": "backdrop-container",
+      },
+      "ref": null,
+      "rendered": Array [
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": Array [
+              "MOVIE",
+              <span>
+                TRACKER
+              </span>,
+            ],
+          },
+          "ref": null,
+          "rendered": Array [
+            "MOVIE",
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": "TRACKER",
+              },
+              "ref": null,
+              "rendered": "TRACKER",
+              "type": "span",
+            },
+          ],
+          "type": "h3",
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "className": "backdrop",
+            "src": "https://image.tmdb.org/t/p/w500undefined",
+          },
+          "ref": null,
+          "rendered": null,
+          "type": "img",
+        },
+      ],
+      "type": "div",
+    },
+  ],
+  Symbol(enzyme.__options__): Object {
+    "adapter": ReactSixteenAdapter {
+      "options": Object {
+        "enableComponentDidUpdateOnSetState": true,
+      },
+    },
+  },
+}
+`;
