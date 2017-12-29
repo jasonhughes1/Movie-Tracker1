@@ -1,0 +1,207 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Login Conatiner login should match the snapshot 1`] = `
+ShallowWrapper {
+  "length": 1,
+  Symbol(enzyme.__root__): [Circular],
+  Symbol(enzyme.__unrendered__): <Login
+    name="Jorge"
+  />,
+  Symbol(enzyme.__renderer__): Object {
+    "batchedUpdates": [Function],
+    "getNode": [Function],
+    "render": [Function],
+    "simulateEvent": [Function],
+    "unmount": [Function],
+  },
+  Symbol(enzyme.__node__): Object {
+    "instance": null,
+    "key": undefined,
+    "nodeType": "host",
+    "props": Object {
+      "children": Array [
+        <h2
+          className="welcome-text"
+        >
+          Welcome Back!
+        </h2>,
+        <input
+          className="email"
+          onChange={[Function]}
+          placeholder="email"
+          value=""
+        />,
+        <input
+          className="password"
+          onChange={[Function]}
+          placeholder="password"
+          value={undefined}
+        />,
+        <button
+          className="submit-button"
+          onClick={[Function]}
+        >
+          submit
+        </button>,
+      ],
+      "className": "login",
+    },
+    "ref": null,
+    "rendered": Array [
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": "Welcome Back!",
+          "className": "welcome-text",
+        },
+        "ref": null,
+        "rendered": "Welcome Back!",
+        "type": "h2",
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "className": "email",
+          "onChange": [Function],
+          "placeholder": "email",
+          "value": "",
+        },
+        "ref": null,
+        "rendered": null,
+        "type": "input",
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "className": "password",
+          "onChange": [Function],
+          "placeholder": "password",
+          "value": undefined,
+        },
+        "ref": null,
+        "rendered": null,
+        "type": "input",
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": "submit",
+          "className": "submit-button",
+          "onClick": [Function],
+        },
+        "ref": null,
+        "rendered": "submit",
+        "type": "button",
+      },
+    ],
+    "type": "div",
+  },
+  Symbol(enzyme.__nodes__): Array [
+    Object {
+      "instance": null,
+      "key": undefined,
+      "nodeType": "host",
+      "props": Object {
+        "children": Array [
+          <h2
+            className="welcome-text"
+          >
+            Welcome Back!
+          </h2>,
+          <input
+            className="email"
+            onChange={[Function]}
+            placeholder="email"
+            value=""
+          />,
+          <input
+            className="password"
+            onChange={[Function]}
+            placeholder="password"
+            value={undefined}
+          />,
+          <button
+            className="submit-button"
+            onClick={[Function]}
+          >
+            submit
+          </button>,
+        ],
+        "className": "login",
+      },
+      "ref": null,
+      "rendered": Array [
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": "Welcome Back!",
+            "className": "welcome-text",
+          },
+          "ref": null,
+          "rendered": "Welcome Back!",
+          "type": "h2",
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "className": "email",
+            "onChange": [Function],
+            "placeholder": "email",
+            "value": "",
+          },
+          "ref": null,
+          "rendered": null,
+          "type": "input",
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "className": "password",
+            "onChange": [Function],
+            "placeholder": "password",
+            "value": undefined,
+          },
+          "ref": null,
+          "rendered": null,
+          "type": "input",
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": "submit",
+            "className": "submit-button",
+            "onClick": [Function],
+          },
+          "ref": null,
+          "rendered": "submit",
+          "type": "button",
+        },
+      ],
+      "type": "div",
+    },
+  ],
+  Symbol(enzyme.__options__): Object {
+    "adapter": ReactSixteenAdapter {
+      "options": Object {
+        "enableComponentDidUpdateOnSetState": true,
+      },
+    },
+  },
+}
+`;

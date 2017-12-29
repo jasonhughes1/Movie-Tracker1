@@ -9,7 +9,7 @@ const { userLogin, receiveFavorites } = helper;
 
 
 
-class Login extends Component {
+export class Login extends Component {
   constructor() {
     super()
     this.state = {
@@ -62,14 +62,14 @@ logIn = async (cred) => {
   }
 }
 
-const mapStateToProps = (store) => {
+export const mapStateToProps = (store) => {
   return {
     login: store.login,
     user: store.user
   }
 }
 
-const mapDispatchToProps = (dispatch) => {
+export const mapDispatchToProps = (dispatch) => {
   return {
     loginSuccess: (email, password) => {
       dispatch(loginSuccess(email, password))

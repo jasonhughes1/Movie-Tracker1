@@ -7,7 +7,7 @@ import { RegisterAction } from '../../Actions/Actions';
 import './Register.css';
 
 
-class Register extends Component {
+export class Register extends Component {
   constructor() {
     super();
     this.state = {
@@ -111,11 +111,11 @@ async logInNewUser(newUserData) {
   }
 }
 
-const mapStateToProps = (store) => ({
+export const mapStateToProps = (store) => ({
   user: store.user
 });
 
-const mapDispatchToProps = (dispatch) => ({
+export const mapDispatchToProps = (dispatch) => ({
   loginSuccess: ( user ) => { dispatch(loginSuccess(user))},
   RegisterSuccess: (user, email, password) => {dispatch(RegisterAction(user, email, password))}
 });

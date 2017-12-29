@@ -1,0 +1,348 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`navBar tests should match the snapshot 1`] = `
+ShallowWrapper {
+  "length": 1,
+  Symbol(enzyme.__root__): [Circular],
+  Symbol(enzyme.__unrendered__): <NavBar
+    addMovieFunction={[Function]}
+    clearFavorites={[Function]}
+    favorites={Array []}
+    history={
+      Object {
+        "hola": "blah",
+      }
+    }
+    location={
+      Object {
+        "pathname": "current-path",
+      }
+    }
+    logout={[Function]}
+    match={
+      Object {
+        "hola": "blah",
+      }
+    }
+    user={
+      Array [
+        Object {
+          "data": Object {
+            "name": "",
+          },
+        },
+      ]
+    }
+  />,
+  Symbol(enzyme.__renderer__): Object {
+    "batchedUpdates": [Function],
+    "getNode": [Function],
+    "render": [Function],
+    "simulateEvent": [Function],
+    "unmount": [Function],
+  },
+  Symbol(enzyme.__node__): Object {
+    "instance": null,
+    "key": undefined,
+    "nodeType": "host",
+    "props": Object {
+      "children": Array [
+        <p
+          className="welcome"
+        >
+          Welcome, 
+          <span
+            className="user"
+          >
+            
+          </span>
+        </p>,
+        <NavLink
+          activeClassName="active"
+          ariaCurrent="true"
+          className="nav"
+          to="/"
+        >
+          Movies
+        </NavLink>,
+        <NavLink
+          activeClassName="active"
+          ariaCurrent="true"
+          className="nav"
+          to="/favorites"
+        >
+          <span>
+            0
+          </span>
+           Favorited
+        </NavLink>,
+        <button
+          className="logout"
+          onClick={[Function]}
+        >
+          log out
+        </button>,
+      ],
+      "className": "nav-bar",
+    },
+    "ref": null,
+    "rendered": Array [
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": Array [
+            "Welcome, ",
+            <span
+              className="user"
+            >
+              
+            </span>,
+          ],
+          "className": "welcome",
+        },
+        "ref": null,
+        "rendered": Array [
+          "Welcome, ",
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": Array [
+                "",
+              ],
+              "className": "user",
+            },
+            "ref": null,
+            "rendered": Array [
+              "",
+            ],
+            "type": "span",
+          },
+        ],
+        "type": "p",
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "function",
+        "props": Object {
+          "activeClassName": "active",
+          "ariaCurrent": "true",
+          "children": "Movies",
+          "className": "nav",
+          "to": "/",
+        },
+        "ref": null,
+        "rendered": "Movies",
+        "type": [Function],
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "function",
+        "props": Object {
+          "activeClassName": "active",
+          "ariaCurrent": "true",
+          "children": Array [
+            <span>
+              0
+            </span>,
+            " Favorited",
+          ],
+          "className": "nav",
+          "to": "/favorites",
+        },
+        "ref": null,
+        "rendered": Array [
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": 0,
+            },
+            "ref": null,
+            "rendered": 0,
+            "type": "span",
+          },
+          " Favorited",
+        ],
+        "type": [Function],
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": "log out",
+          "className": "logout",
+          "onClick": [Function],
+        },
+        "ref": null,
+        "rendered": "log out",
+        "type": "button",
+      },
+    ],
+    "type": "div",
+  },
+  Symbol(enzyme.__nodes__): Array [
+    Object {
+      "instance": null,
+      "key": undefined,
+      "nodeType": "host",
+      "props": Object {
+        "children": Array [
+          <p
+            className="welcome"
+          >
+            Welcome, 
+            <span
+              className="user"
+            >
+              
+            </span>
+          </p>,
+          <NavLink
+            activeClassName="active"
+            ariaCurrent="true"
+            className="nav"
+            to="/"
+          >
+            Movies
+          </NavLink>,
+          <NavLink
+            activeClassName="active"
+            ariaCurrent="true"
+            className="nav"
+            to="/favorites"
+          >
+            <span>
+              0
+            </span>
+             Favorited
+          </NavLink>,
+          <button
+            className="logout"
+            onClick={[Function]}
+          >
+            log out
+          </button>,
+        ],
+        "className": "nav-bar",
+      },
+      "ref": null,
+      "rendered": Array [
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": Array [
+              "Welcome, ",
+              <span
+                className="user"
+              >
+                
+              </span>,
+            ],
+            "className": "welcome",
+          },
+          "ref": null,
+          "rendered": Array [
+            "Welcome, ",
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": Array [
+                  "",
+                ],
+                "className": "user",
+              },
+              "ref": null,
+              "rendered": Array [
+                "",
+              ],
+              "type": "span",
+            },
+          ],
+          "type": "p",
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "function",
+          "props": Object {
+            "activeClassName": "active",
+            "ariaCurrent": "true",
+            "children": "Movies",
+            "className": "nav",
+            "to": "/",
+          },
+          "ref": null,
+          "rendered": "Movies",
+          "type": [Function],
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "function",
+          "props": Object {
+            "activeClassName": "active",
+            "ariaCurrent": "true",
+            "children": Array [
+              <span>
+                0
+              </span>,
+              " Favorited",
+            ],
+            "className": "nav",
+            "to": "/favorites",
+          },
+          "ref": null,
+          "rendered": Array [
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": 0,
+              },
+              "ref": null,
+              "rendered": 0,
+              "type": "span",
+            },
+            " Favorited",
+          ],
+          "type": [Function],
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": "log out",
+            "className": "logout",
+            "onClick": [Function],
+          },
+          "ref": null,
+          "rendered": "log out",
+          "type": "button",
+        },
+      ],
+      "type": "div",
+    },
+  ],
+  Symbol(enzyme.__options__): Object {
+    "adapter": ReactSixteenAdapter {
+      "options": Object {
+        "enableComponentDidUpdateOnSetState": true,
+      },
+    },
+  },
+}
+`;

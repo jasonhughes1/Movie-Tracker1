@@ -9,7 +9,7 @@ import PropTypes from 'prop-types';
 
 const { fetchMovies } = helper;
 
-class NavBar extends Component {
+export class NavBar extends Component {
 
 
  async componentDidMount() {
