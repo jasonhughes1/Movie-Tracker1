@@ -9,8 +9,6 @@ export const addMoviesReducer = (store = [], action) => {
 
 export const user = (store = [], action) => {
   switch (action.type) {
-  case 'LOGIN_USER':
-    return [...store, action.user];
   case 'LOGIN_SUCCESS':
     return [...store, action.user];
   case 'LOGOUT':

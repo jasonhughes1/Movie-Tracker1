@@ -21,7 +21,7 @@ ShallowWrapper {
         <h3>
           MOVIE
           <span>
-            TRACKER
+             TRACKER
           </span>
         </h3>,
         <img
@@ -41,7 +41,7 @@ ShallowWrapper {
           "children": Array [
             "MOVIE",
             <span>
-              TRACKER
+               TRACKER
             </span>,
           ],
         },
@@ -53,10 +53,10 @@ ShallowWrapper {
             "key": undefined,
             "nodeType": "host",
             "props": Object {
-              "children": "TRACKER",
+              "children": " TRACKER",
             },
             "ref": null,
-            "rendered": "TRACKER",
+            "rendered": " TRACKER",
             "type": "span",
           },
         ],
@@ -87,7 +87,7 @@ ShallowWrapper {
           <h3>
             MOVIE
             <span>
-              TRACKER
+               TRACKER
             </span>
           </h3>,
           <img
@@ -107,7 +107,7 @@ ShallowWrapper {
             "children": Array [
               "MOVIE",
               <span>
-                TRACKER
+                 TRACKER
               </span>,
             ],
           },
@@ -119,10 +119,10 @@ ShallowWrapper {
               "key": undefined,
               "nodeType": "host",
               "props": Object {
-                "children": "TRACKER",
+                "children": " TRACKER",
               },
               "ref": null,
-              "rendered": "TRACKER",
+              "rendered": " TRACKER",
               "type": "span",
             },
           ],
