@@ -1,32 +1,142 @@
 import helper from './helper';
 import mockData from './mockData';
 
-const { 
-  fetchMovies 
-} = helper;
 
-const {
-  filmData
-} = mockData;
-
-describe('Fetch Movies Tests', () => {
-  beforeEach(() => {
-    window.fetch = 
-      jest.fn().mockImplementation(() => 
-        Promise.resolve({
-          status: 200,
-          json: () => Promise.resolve(
-            {results: filmData.results}
-          )
-        }));
+describe('movie API call', () => {
+  beforeAll(() => {
+    window.fetch = jest.fn().mockImplementation(() => Promise.resolve({
+      json: () => Promise.resolve(
+        {
+          results: ['array', 'of', 'movies']
+        }
+      )
+    }));
   });
 
-  it.skip('should be called with the correct params', async () => {
-    const mockData = filmData;
-    const expected = ['https://api.themoviedb.org/3/movie/now_playing?api_key=020247bf421cd580aa7ceee48b183e05'];
-    
-    fetchMovies();
-    expect(expected).toHaveBeenCalledWith(...mockData);
+  it.skip('should fetch movies', async () => {
+    const movies = await helper.fetchMovies();
+    expect(movies).toEqual(['array', 'of', 'movies']);
   });
 
+  describe('user API', () => {
+  it('userLogin should return user data if successful', async () => {
+    window.fetch = jest.fn().mockImplementation(() => Promise.resolve({
+      json: () => Promise.resolve(
+        {
+          
+            "data": {
+              "user": "info"
+            }
+        }
+      )
+    }));
+    const userData = await helper.userLogin({user: 'payload'});
+    expect(userData).toEqual({"data": {"user": "info"}});
+  });
+
+});
+
+  describe('user register API', () => {
+  it('userRegister should return user data if successful', async () => {
+    window.fetch = jest.fn().mockImplementation(() => Promise.resolve({
+      json: () => Promise.resolve(
+        {
+          
+            "data": {
+              "user": "info"
+            }
+        }
+      )
+    }));
+    const userData = await helper.userRegister({user: 'payload'});
+    expect(userData).toEqual({"data": {"user": "info"}});
+  });
+
+});
+
+  describe('Fetch Favorites API', () => {
+  it('fetchFavorites should return favorites if successful', async () => {
+    window.fetch = jest.fn().mockImplementation(() => Promise.resolve({
+      json: () => Promise.resolve(
+        {
+          movie_id: 1244,
+          user_id: 2,
+          title: 'coco',
+          poster_path: 'hkrorkg',
+          release_date: '1992',
+          vote_average: 7.8,
+          overview: 'stuff happens'
+        }
+      )
+    }));
+    const favorites = await helper.fetchFavorites({user: 'payload'});
+    expect(favorites).toEqual({movie_id: 1244,
+          user_id: 2,
+          title: 'coco',
+          poster_path: 'hkrorkg',
+          release_date: '1992',
+          vote_average: 7.8,
+          overview: 'stuff happens'});
+  });
+
+});
+
+  describe('Receive Favorites API', () => {
+  it('receiveFavorites should return favorites if successful', async () => {
+    window.fetch = jest.fn().mockImplementation(() => Promise.resolve({
+      json: () => Promise.resolve(
+        {
+          movie_id: 1244,
+          user_id: 2,
+          title: 'coco',
+          poster_path: 'hkrorkg',
+          release_date: '1992',
+          vote_average: 7.8,
+          overview: 'stuff happens'
+        }
+      )
+    }));
+    const favorites = await helper.receiveFavorites({user: 'payload'});
+    expect(favorites).toEqual({movie_id: 1244,
+          user_id: 2,
+          title: 'coco',
+          poster_path: 'hkrorkg',
+          release_date: '1992',
+          vote_average: 7.8,
+          overview: 'stuff happens'});
+  });
+
+});
+
+  describe('Fetch Favorites API', () => {
+  it('fetchFavorites should return favorites if successful', async () => {
+    window.fetch = jest.fn().mockImplementation(() => Promise.resolve({
+      json: () => Promise.resolve(
+        {
+          movie_id: 1244,
+          user_id: 2,
+        }
+      )
+    }));
+    const favorites = await helper.fetchFavorites({user: 'payload'});
+    expect(favorites).toEqual({movie_id: 1244, user_id: 2});
+  });
+
+});
+
+  describe('Delete Favorites API', () => {
+  it.only('deleteFavorites should return favorites if successful', async () => {
+    window.fetch = jest.fn().mockImplementation(() => Promise.resolve({
+      json: () => Promise.resolve(
+        {
+          movie_id: 1244,
+          user_id: 2,
+        }
+      )
+    }));
+    const favorites = await helper.deleteFavorites({user: 'payload'});
+    expect(favorites).toEqual({movie_id: 1244, user_id: 2});
+  });
+
+});
 });
