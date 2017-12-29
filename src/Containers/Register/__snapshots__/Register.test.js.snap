@@ -1,0 +1,397 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Register Conatiner login should match the snapshot 1`] = `
+ShallowWrapper {
+  "length": 1,
+  Symbol(enzyme.__root__): [Circular],
+  Symbol(enzyme.__unrendered__): <Register
+    name="Jorge"
+  />,
+  Symbol(enzyme.__renderer__): Object {
+    "batchedUpdates": [Function],
+    "getNode": [Function],
+    "render": [Function],
+    "simulateEvent": [Function],
+    "unmount": [Function],
+  },
+  Symbol(enzyme.__node__): Object {
+    "instance": null,
+    "key": undefined,
+    "nodeType": "host",
+    "props": Object {
+      "children": Array [
+        <h2
+          className="welcome-text"
+        >
+          Get Started!
+        </h2>,
+        <form
+          onSubmit={[Function]}
+        >
+          <input
+            className="name"
+            onChange={[Function]}
+            placeholder="Name"
+            type="text"
+          />
+          <input
+            className="email"
+            onChange={[Function]}
+            placeholder="Email"
+            type="email"
+          />
+          <input
+            className="password"
+            onChange={[Function]}
+            placeholder="Password"
+            type="password"
+          />
+          <input
+            className="name"
+            onChange={[Function]}
+            placeholder="Please Retype Password"
+            type="password"
+          />
+          <button
+            className="submit-button"
+            disabled={true}
+            type="submit"
+          >
+            Register
+          </button>
+        </form>,
+      ],
+      "className": "register-container",
+    },
+    "ref": null,
+    "rendered": Array [
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": "Get Started!",
+          "className": "welcome-text",
+        },
+        "ref": null,
+        "rendered": "Get Started!",
+        "type": "h2",
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": Array [
+            false,
+            false,
+            <input
+              className="name"
+              onChange={[Function]}
+              placeholder="Name"
+              type="text"
+            />,
+            <input
+              className="email"
+              onChange={[Function]}
+              placeholder="Email"
+              type="email"
+            />,
+            <input
+              className="password"
+              onChange={[Function]}
+              placeholder="Password"
+              type="password"
+            />,
+            <input
+              className="name"
+              onChange={[Function]}
+              placeholder="Please Retype Password"
+              type="password"
+            />,
+            <button
+              className="submit-button"
+              disabled={true}
+              type="submit"
+            >
+              Register
+            </button>,
+          ],
+          "onSubmit": [Function],
+        },
+        "ref": null,
+        "rendered": Array [
+          false,
+          false,
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "className": "name",
+              "onChange": [Function],
+              "placeholder": "Name",
+              "type": "text",
+            },
+            "ref": null,
+            "rendered": null,
+            "type": "input",
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "className": "email",
+              "onChange": [Function],
+              "placeholder": "Email",
+              "type": "email",
+            },
+            "ref": null,
+            "rendered": null,
+            "type": "input",
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "className": "password",
+              "onChange": [Function],
+              "placeholder": "Password",
+              "type": "password",
+            },
+            "ref": null,
+            "rendered": null,
+            "type": "input",
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "className": "name",
+              "onChange": [Function],
+              "placeholder": "Please Retype Password",
+              "type": "password",
+            },
+            "ref": null,
+            "rendered": null,
+            "type": "input",
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": "Register",
+              "className": "submit-button",
+              "disabled": true,
+              "type": "submit",
+            },
+            "ref": null,
+            "rendered": "Register",
+            "type": "button",
+          },
+        ],
+        "type": "form",
+      },
+    ],
+    "type": "div",
+  },
+  Symbol(enzyme.__nodes__): Array [
+    Object {
+      "instance": null,
+      "key": undefined,
+      "nodeType": "host",
+      "props": Object {
+        "children": Array [
+          <h2
+            className="welcome-text"
+          >
+            Get Started!
+          </h2>,
+          <form
+            onSubmit={[Function]}
+          >
+            <input
+              className="name"
+              onChange={[Function]}
+              placeholder="Name"
+              type="text"
+            />
+            <input
+              className="email"
+              onChange={[Function]}
+              placeholder="Email"
+              type="email"
+            />
+            <input
+              className="password"
+              onChange={[Function]}
+              placeholder="Password"
+              type="password"
+            />
+            <input
+              className="name"
+              onChange={[Function]}
+              placeholder="Please Retype Password"
+              type="password"
+            />
+            <button
+              className="submit-button"
+              disabled={true}
+              type="submit"
+            >
+              Register
+            </button>
+          </form>,
+        ],
+        "className": "register-container",
+      },
+      "ref": null,
+      "rendered": Array [
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": "Get Started!",
+            "className": "welcome-text",
+          },
+          "ref": null,
+          "rendered": "Get Started!",
+          "type": "h2",
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": Array [
+              false,
+              false,
+              <input
+                className="name"
+                onChange={[Function]}
+                placeholder="Name"
+                type="text"
+              />,
+              <input
+                className="email"
+                onChange={[Function]}
+                placeholder="Email"
+                type="email"
+              />,
+              <input
+                className="password"
+                onChange={[Function]}
+                placeholder="Password"
+                type="password"
+              />,
+              <input
+                className="name"
+                onChange={[Function]}
+                placeholder="Please Retype Password"
+                type="password"
+              />,
+              <button
+                className="submit-button"
+                disabled={true}
+                type="submit"
+              >
+                Register
+              </button>,
+            ],
+            "onSubmit": [Function],
+          },
+          "ref": null,
+          "rendered": Array [
+            false,
+            false,
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "className": "name",
+                "onChange": [Function],
+                "placeholder": "Name",
+                "type": "text",
+              },
+              "ref": null,
+              "rendered": null,
+              "type": "input",
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "className": "email",
+                "onChange": [Function],
+                "placeholder": "Email",
+                "type": "email",
+              },
+              "ref": null,
+              "rendered": null,
+              "type": "input",
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "className": "password",
+                "onChange": [Function],
+                "placeholder": "Password",
+                "type": "password",
+              },
+              "ref": null,
+              "rendered": null,
+              "type": "input",
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "className": "name",
+                "onChange": [Function],
+                "placeholder": "Please Retype Password",
+                "type": "password",
+              },
+              "ref": null,
+              "rendered": null,
+              "type": "input",
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": "Register",
+                "className": "submit-button",
+                "disabled": true,
+                "type": "submit",
+              },
+              "ref": null,
+              "rendered": "Register",
+              "type": "button",
+            },
+          ],
+          "type": "form",
+        },
+      ],
+      "type": "div",
+    },
+  ],
+  Symbol(enzyme.__options__): Object {
+    "adapter": ReactSixteenAdapter {
+      "options": Object {
+        "enableComponentDidUpdateOnSetState": true,
+      },
+    },
+  },
+}
+`;

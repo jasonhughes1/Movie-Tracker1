@@ -8,7 +8,7 @@ import { fetchFavorites, receiveFavorites, deleteFavorites } from '../../API/hel
 import PropTypes from 'prop-types';
 
 
-class CardList extends Component {
+export class CardList extends Component {
 
   addFavoriteMovie = (movie) => {
     if(this.props.user[0]) {
@@ -76,7 +76,7 @@ class CardList extends Component {
  }
 }
 
-const mapStateToProps = (store) => {
+export const mapStateToProps = (store) => {
   return {
     user: store.user,
     movies: store.movies,
@@ -84,7 +84,7 @@ const mapStateToProps = (store) => {
   }
 }
 
-const mapDispatchToProps = (dispatch) => {
+export const mapDispatchToProps = (dispatch) => {
   return {
     setFavorites: (newFavorites) => {
       dispatch(setFavorites(newFavorites));

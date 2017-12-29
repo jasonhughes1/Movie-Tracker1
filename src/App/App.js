@@ -1,11 +1,11 @@
 import React, { Component } from 'react';
 import './App.css';
 import CardList from '../Containers/CardList/CardList';
-import NavBar from '../Components/NavBar/NavBar';
+import NavBar from '../Containers/NavBar/NavBar';
 import { Route } from 'react-router-dom';
 import Login from '../Containers/Login/Login.js';
 import Register from '../Containers/Register/Register.js';
-import Favorites from '../Components/Favorites/Favorites';
+import Favorites from '../Containers/Favorites/Favorites';
 
 class App extends Component {
 

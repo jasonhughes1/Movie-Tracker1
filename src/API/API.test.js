@@ -13,9 +13,12 @@ describe('movie API call', () => {
     }));
   });
 
-  it.skip('should fetch movies', async () => {
+  it('should fetch movies', async () => {
     const movies = await helper.fetchMovies();
-    expect(movies).toEqual(['array', 'of', 'movies']);
+    expect(movies).toEqual([
+      {"backdrop": undefined, "favorite": false, "movieid": undefined, "overview": undefined, "poster_path": undefined, "release_date": undefined, "title": undefined, "vote": undefined},
+      {"backdrop": undefined, "favorite": false, "movieid": undefined, "overview": undefined, "poster_path": undefined, "release_date": undefined, "title": undefined, "vote": undefined},
+      {"backdrop": undefined, "favorite": false, "movieid": undefined, "overview": undefined, "poster_path": undefined, "release_date": undefined, "title": undefined, "vote": undefined}]);
   });
 
   describe('user API', () => {
@@ -23,7 +26,7 @@ describe('movie API call', () => {
     window.fetch = jest.fn().mockImplementation(() => Promise.resolve({
       json: () => Promise.resolve(
         {
-          
+
             "data": {
               "user": "info"
             }
@@ -41,7 +44,7 @@ describe('movie API call', () => {
     window.fetch = jest.fn().mockImplementation(() => Promise.resolve({
       json: () => Promise.resolve(
         {
-          
+
             "data": {
               "user": "info"
             }
@@ -125,7 +128,7 @@ describe('movie API call', () => {
 });
 
   describe('Delete Favorites API', () => {
-  it.only('deleteFavorites should return favorites if successful', async () => {
+  it('deleteFavorites should return favorites if successful', async () => {
     window.fetch = jest.fn().mockImplementation(() => Promise.resolve({
       json: () => Promise.resolve(
         {

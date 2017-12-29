@@ -5,7 +5,7 @@ import CardList from '../../Containers/CardList/CardList'
 import { fetchFavorites, deleteFavorites, receiveFavorites } from '../../API/helper.js';
 import { setFavorites } from '../../Actions/Actions';
 
-class Favorites extends Component {
+export class Favorites extends Component {
 
 
   addFavoriteMovie = (movie) => {
@@ -60,7 +60,7 @@ class Favorites extends Component {
  }
 }
 
-const mapStateToProps = (store) => {
+export const mapStateToProps = (store) => {
   return {
     user: store.user,
     movies: store.movies,
@@ -68,7 +68,7 @@ const mapStateToProps = (store) => {
   }
 }
 
-const mapDispatchToProps = (dispatch) => {
+export const mapDispatchToProps = (dispatch) => {
   return {
     setFavorites: (newFavorites) => {
       dispatch(setFavorites(newFavorites));
