@@ -108,7 +108,6 @@ describe('movie API call', () => {
           vote_average: 7.8,
           overview: 'stuff happens'});
   });
-
 });
 
   describe('Fetch Favorites API', () => {
